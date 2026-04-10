@@ -1,0 +1,1122 @@
+[
+  {
+    "case_id": "LD_001",
+    "case_summary": "Neighbor built a fence 2 feet inside my agricultural land boundary.",
+    "case_type": "boundary_dispute",
+    "location": "Telangana",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Boundary disputes require legal verification of land ownership and court-appointed survey.",
+    "steps": [
+      "File civil suit under Order VII CPC",
+      "Request court-appointed land surveyor",
+      "Submit chain of title documents"
+    ]
+  },
+  {
+    "case_id": "LD_002",
+    "case_summary": "My neighbor shifted boundary stones on my 3-acre land without permission.",
+    "case_type": "boundary_dispute",
+    "location": "Andhra Pradesh",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Illegal shifting of boundary markers requires civil court intervention and resurvey.",
+    "steps": [
+      "File civil suit for declaration of boundary",
+      "Request revenue department survey",
+      "Submit original land records"
+    ]
+  },
+  {
+    "case_id": "LD_003",
+    "case_summary": "My relative is claiming 1 acre of my paddy field is within his land.",
+    "case_type": "boundary_dispute",
+    "location": "Maharashtra",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Disputed boundary between relatives requires civil suit and title verification.",
+    "steps": [
+      "File suit for permanent injunction",
+      "Submit 7/12 extract as evidence",
+      "Request court-appointed surveyor"
+    ]
+  },
+  {
+    "case_id": "LD_004",
+    "case_summary": "A road was constructed through my land without any official notice or compensation.",
+    "case_type": "boundary_dispute",
+    "location": "Uttar Pradesh",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Unauthorized road construction on private land requires civil court for compensation.",
+    "steps": [
+      "File civil suit for damages",
+      "Submit land ownership proof",
+      "Request compensation hearing"
+    ]
+  },
+  {
+    "case_id": "LD_005",
+    "case_summary": "My neighbor claims the wall separating our properties belongs to him.",
+    "case_type": "boundary_dispute",
+    "location": "Karnataka",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Ownership of boundary wall is a civil dispute requiring title verification.",
+    "steps": [
+      "File declaratory suit",
+      "Submit property documents",
+      "Provide witness statements"
+    ]
+  },
+  {
+    "case_id": "LD_006",
+    "case_summary": "Government survey shows my plot is 0.5 acres smaller than my registered area.",
+    "case_type": "boundary_dispute",
+    "location": "Tamil Nadu",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Discrepancy between registered and actual area requires civil court for correction.",
+    "steps": [
+      "File suit for correction of records",
+      "Submit original sale deed",
+      "Request fresh survey"
+    ]
+  },
+  {
+    "case_id": "LD_007",
+    "case_summary": "Two village maps show different boundaries for my agricultural plot.",
+    "case_type": "boundary_dispute",
+    "location": "Gujarat",
+    "language": "english",
+    "correct_route": "revenue_department",
+    "reasoning": "Map discrepancy in village records is handled by revenue department for correction.",
+    "steps": [
+      "Apply to Tehsildar for map correction",
+      "Submit both conflicting map copies",
+      "Request revenue official inspection"
+    ]
+  },
+  {
+    "case_id": "LD_008",
+    "case_summary": "My uncle encroached 1 acre and planted crops claiming it is part of his land.",
+    "case_type": "boundary_dispute",
+    "location": "Punjab",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Disputed cultivation rights require civil court to establish correct boundary.",
+    "steps": [
+      "File civil suit for recovery of possession",
+      "Submit revenue records",
+      "Request field verification"
+    ]
+  },
+  {
+    "case_id": "LD_009",
+    "case_summary": "मेरे पड़ोसी ने मेरी ज़मीन की सीमा पर अवैध निर्माण कर दिया है।",
+    "case_type": "boundary_dispute",
+    "location": "Uttar Pradesh",
+    "language": "hindi",
+    "correct_route": "civil_court",
+    "reasoning": "सीमा विवाद में सिविल कोर्ट में वाद दाखिल करना आवश्यक है।",
+    "steps": [
+      "सिविल कोर्ट में वाद दाखिल करें",
+      "भूमि के कागजात प्रस्तुत करें",
+      "सर्वे के लिए आवेदन करें"
+    ]
+  },
+  {
+    "case_id": "LD_010",
+    "case_summary": "मेरे खेत की मेड़ बदलकर पड़ोसी ने 2 बीघा जमीन कब्जा कर ली है।",
+    "case_type": "boundary_dispute",
+    "location": "Bihar",
+    "language": "hindi",
+    "correct_route": "civil_court",
+    "reasoning": "खेत की सीमा बदलने का विवाद सिविल न्यायालय के अधीन है।",
+    "steps": [
+      "सिविल कोर्ट में स्थायी निषेधाज्ञा हेतु वाद दायर करें",
+      "राजस्व रिकॉर्ड जमा करें",
+      "न्यायालय द्वारा सर्वे का अनुरोध करें"
+    ]
+  },
+  {
+    "case_id": "LD_011",
+    "case_summary": "My uncle is claiming my father's inherited 5-acre agricultural land after his death.",
+    "case_type": "inheritance_dispute",
+    "location": "Andhra Pradesh",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Inheritance disputes over property require civil court under Succession Act.",
+    "steps": [
+      "File civil suit to establish legal heirship",
+      "Submit death certificate and legal heir certificate",
+      "Provide property ownership documents"
+    ]
+  },
+  {
+    "case_id": "LD_012",
+    "case_summary": "My brother claims the will is forged and demands equal share in father's land.",
+    "case_type": "inheritance_dispute",
+    "location": "Telangana",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Will validity disputes require civil court under Indian Succession Act.",
+    "steps": [
+      "File suit for probate of will",
+      "Submit original will and witness affidavits",
+      "Request handwriting expert if forgery alleged"
+    ]
+  },
+  {
+    "case_id": "LD_013",
+    "case_summary": "My grandfather's land was not transferred to my father's name despite being the only son.",
+    "case_type": "inheritance_dispute",
+    "location": "Maharashtra",
+    "language": "english",
+    "correct_route": "revenue_department",
+    "reasoning": "Mutation of land records after inheritance is handled by revenue department.",
+    "steps": [
+      "Apply for mutation at Tehsildar office",
+      "Submit death certificate and legal heir documents",
+      "Follow up on mutation order"
+    ]
+  },
+  {
+    "case_id": "LD_014",
+    "case_summary": "After my husband died, his brothers are claiming his land, ignoring my rights as wife.",
+    "case_type": "inheritance_dispute",
+    "location": "Rajasthan",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Widow's inheritance rights require civil court intervention under Hindu Succession Act.",
+    "steps": [
+      "File suit declaring widow's inheritance rights",
+      "Submit marriage certificate and death certificate",
+      "Apply for interim injunction on property"
+    ]
+  },
+  {
+    "case_id": "LD_015",
+    "case_summary": "Three brothers are fighting over a 10-acre plot inherited from their father with no written will.",
+    "case_type": "inheritance_dispute",
+    "location": "Karnataka",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Intestate succession dispute requires civil court for partition and declaration.",
+    "steps": [
+      "File partition suit under CPC",
+      "Submit revenue records and family tree",
+      "Court will appoint commissioner for partition"
+    ]
+  },
+  {
+    "case_id": "LD_016",
+    "case_summary": "Daughter-in-law is claiming share in joint family agricultural land after husband's death.",
+    "case_type": "inheritance_dispute",
+    "location": "Uttar Pradesh",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Succession rights in joint family property require civil court adjudication.",
+    "steps": [
+      "File for share in joint property",
+      "Submit relevant family documents",
+      "Seek court partition order"
+    ]
+  },
+  {
+    "case_id": "LD_017",
+    "case_summary": "My father's second wife is claiming half of his property, denying us our share.",
+    "case_type": "inheritance_dispute",
+    "location": "Tamil Nadu",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Multiple claimants to inheritance require civil court for proper division.",
+    "steps": [
+      "File suit for partition",
+      "Submit birth and marriage certificates",
+      "Provide revenue land records"
+    ]
+  },
+  {
+    "case_id": "LD_018",
+    "case_summary": "Adopted son is being denied share in property by biological children after father's death.",
+    "case_type": "inheritance_dispute",
+    "location": "Gujarat",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Adopted child's rights in inheritance are protected under Hindu law via civil court.",
+    "steps": [
+      "File civil suit for declaration of rights",
+      "Submit adoption deed",
+      "Provide property ownership documents"
+    ]
+  },
+  {
+    "case_id": "LD_019",
+    "case_summary": "मेरे चाचा ने दादाजी की जमीन पर झूठे दस्तावेज बनाकर कब्जा कर लिया है।",
+    "case_type": "inheritance_dispute",
+    "location": "Madhya Pradesh",
+    "language": "hindi",
+    "correct_route": "civil_court",
+    "reasoning": "जाली दस्तावेजों से संपत्ति हड़पना सिविल और आपराधिक दोनों मामला है।",
+    "steps": [
+      "सिविल कोर्ट में संपत्ति वाद दाखिल करें",
+      "पुलिस में FIR दर्ज करें",
+      "मूल भूमि दस्तावेज प्रस्तुत करें"
+    ]
+  },
+  {
+    "case_id": "LD_020",
+    "case_summary": "पिताजी के निधन के बाद बड़े भाई ने अकेले ही जमीन अपने नाम करा ली।",
+    "case_type": "inheritance_dispute",
+    "location": "Uttar Pradesh",
+    "language": "hindi",
+    "correct_route": "civil_court",
+    "reasoning": "अन्य उत्तराधिकारियों की सहमति के बिना जमीन ट्रांसफर करना गलत है, सिविल कोर्ट से राहत मिलेगी।",
+    "steps": [
+      "सिविल कोर्ट में बंटवारे का वाद दायर करें",
+      "मृत्यु प्रमाणपत्र और परिवार रजिस्टर जमा करें",
+      "अंतरिम आदेश हेतु आवेदन करें"
+    ]
+  },
+  {
+    "case_id": "LD_021",
+    "case_summary": "Tenant has not paid rent for 8 months and refuses to vacate my house.",
+    "case_type": "tenancy_issue",
+    "location": "Karnataka",
+    "language": "english",
+    "correct_route": "revenue_department",
+    "reasoning": "Tenancy disputes for eviction and rent recovery are handled through revenue/rent authority.",
+    "steps": [
+      "File eviction petition before Rent Controller",
+      "Submit rent agreement and payment ledger",
+      "Attend hearing for eviction order"
+    ]
+  },
+  {
+    "case_id": "LD_022",
+    "case_summary": "My tenant has sublet my property to another person without my knowledge.",
+    "case_type": "tenancy_issue",
+    "location": "Maharashtra",
+    "language": "english",
+    "correct_route": "revenue_department",
+    "reasoning": "Unauthorized subletting is a ground for eviction under rent control law.",
+    "steps": [
+      "File eviction case citing unauthorized subletting",
+      "Submit original rent agreement",
+      "Provide evidence of unauthorized occupants"
+    ]
+  },
+  {
+    "case_id": "LD_023",
+    "case_summary": "Tenant is running a commercial shop in a property rented for residential use.",
+    "case_type": "tenancy_issue",
+    "location": "Delhi",
+    "language": "english",
+    "correct_route": "revenue_department",
+    "reasoning": "Misuse of rented premises is eviction ground under rent control legislation.",
+    "steps": [
+      "Issue legal notice to tenant",
+      "File eviction petition for misuse",
+      "Submit rent agreement specifying residential use"
+    ]
+  },
+  {
+    "case_id": "LD_024",
+    "case_summary": "Landlord is forcibly trying to evict me despite valid rent agreement still in force.",
+    "case_type": "tenancy_issue",
+    "location": "Tamil Nadu",
+    "language": "english",
+    "correct_route": "revenue_department",
+    "reasoning": "Tenant's protection against illegal eviction is under Rent Control Act.",
+    "steps": [
+      "File complaint before Rent Controller",
+      "Submit valid rent agreement",
+      "Request stay on eviction"
+    ]
+  },
+  {
+    "case_id": "LD_025",
+    "case_summary": "Tenant damaged walls and flooring of my house and refuses to pay for repairs.",
+    "case_type": "tenancy_issue",
+    "location": "Kerala",
+    "language": "english",
+    "correct_route": "revenue_department",
+    "reasoning": "Property damage by tenant is grounds for eviction and compensation via rent authority.",
+    "steps": [
+      "File complaint before Rent Controller",
+      "Provide photographic evidence of damage",
+      "Claim repair costs in petition"
+    ]
+  },
+  {
+    "case_id": "LD_026",
+    "case_summary": "Landlord increased rent by 50% suddenly without any prior notice.",
+    "case_type": "tenancy_issue",
+    "location": "Gujarat",
+    "language": "english",
+    "correct_route": "revenue_department",
+    "reasoning": "Arbitrary rent hike without proper notice violates Rent Control Act.",
+    "steps": [
+      "File complaint with Rent Controller",
+      "Submit original rent agreement",
+      "Request fixation of standard rent"
+    ]
+  },
+  {
+    "case_id": "LD_027",
+    "case_summary": "Agriculture land given on lease for 3 years; tenant now refuses to return after lease expired.",
+    "case_type": "tenancy_issue",
+    "location": "Andhra Pradesh",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Recovery of agricultural land from tenant after lease expiry requires civil court.",
+    "steps": [
+      "File civil suit for recovery of possession",
+      "Submit lease agreement",
+      "Request interim injunction"
+    ]
+  },
+  {
+    "case_id": "LD_028",
+    "case_summary": "किरायेदार ने मकान में मंजिल जोड़ दी बिना मेरी अनुमति के।",
+    "case_type": "tenancy_issue",
+    "location": "Rajasthan",
+    "language": "hindi",
+    "correct_route": "revenue_department",
+    "reasoning": "किरायेदार द्वारा अनधिकृत निर्माण बेदखली का आधार है।",
+    "steps": [
+      "किराया नियंत्रक के समक्ष बेदखली याचिका दाखिल करें",
+      "किराया समझौता प्रस्तुत करें",
+      "अनधिकृत निर्माण का साक्ष्य दें"
+    ]
+  },
+  {
+    "case_id": "LD_029",
+    "case_summary": "Someone illegally occupied my 2-acre agricultural land while I was abroad.",
+    "case_type": "encroachment",
+    "location": "Maharashtra",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Illegal occupation of land requires civil court for recovery of possession.",
+    "steps": [
+      "File civil suit for recovery of possession",
+      "Submit land ownership documents",
+      "Apply for interim injunction"
+    ]
+  },
+  {
+    "case_id": "LD_030",
+    "case_summary": "My neighbor has built a permanent structure encroaching 3 feet into my plot.",
+    "case_type": "encroachment",
+    "location": "Telangana",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Permanent encroachment requires civil court for mandatory injunction to remove structure.",
+    "steps": [
+      "File suit for mandatory injunction",
+      "Submit survey map showing encroachment",
+      "Request demolition order from court"
+    ]
+  },
+  {
+    "case_id": "LD_031",
+    "case_summary": "Local politician encroached and fenced off my farmland of 4 acres.",
+    "case_type": "encroachment",
+    "location": "Bihar",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Encroachment by any person requires civil court; police complaint also advisable.",
+    "steps": [
+      "File civil suit for recovery of land",
+      "File police complaint under IPC",
+      "Submit revenue records as proof"
+    ]
+  },
+  {
+    "case_id": "LD_032",
+    "case_summary": "Villagers are using my private land as a common path claiming it is a public road.",
+    "case_type": "encroachment",
+    "location": "Uttar Pradesh",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Private land being claimed as public road needs civil court declaration.",
+    "steps": [
+      "File suit for declaration and injunction",
+      "Submit land records showing private ownership",
+      "Provide historical proof of ownership"
+    ]
+  },
+  {
+    "case_id": "LD_033",
+    "case_summary": "Builder illegally used part of my plot for construction of apartment building.",
+    "case_type": "encroachment",
+    "location": "Karnataka",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Builder encroachment requires civil court for injunction and damages.",
+    "steps": [
+      "File civil suit against builder",
+      "Submit site plan and title documents",
+      "Seek mandatory injunction for removal"
+    ]
+  },
+  {
+    "case_id": "LD_034",
+    "case_summary": "Government officials wrongly marked my privately owned land as government land.",
+    "case_type": "encroachment",
+    "location": "Andhra Pradesh",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Erroneous government classification of private land requires civil court challenge.",
+    "steps": [
+      "File civil suit against government",
+      "Submit original title documents",
+      "Request stay on any government action"
+    ]
+  },
+  {
+    "case_id": "LD_035",
+    "case_summary": "Encroacher built a temporary shed on my land and now refuses to leave.",
+    "case_type": "encroachment",
+    "location": "Gujarat",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Possession of land by trespasser requires civil suit for recovery.",
+    "steps": [
+      "File suit for recovery of possession",
+      "Submit ownership documents",
+      "Request police assistance if needed"
+    ]
+  },
+  {
+    "case_id": "LD_036",
+    "case_summary": "मेरे पड़ोसी ने मेरी जमीन पर अवैध रूप से कब्जा कर लिया है।",
+    "case_type": "encroachment",
+    "location": "Uttar Pradesh",
+    "language": "hindi",
+    "correct_route": "civil_court",
+    "reasoning": "अवैध कब्जे के लिए सिविल कोर्ट से निष्कासन आदेश प्राप्त करना होगा।",
+    "steps": [
+      "सिविल कोर्ट में कब्जा वापसी का वाद दाखिल करें",
+      "भूमि के मूल दस्तावेज प्रस्तुत करें",
+      "अंतरिम निषेधाज्ञा के लिए आवेदन करें"
+    ]
+  },
+  {
+    "case_id": "LD_037",
+    "case_summary": "किसी ने मेरे खाली खेत पर झोपड़ी बनाकर कब्जा कर लिया है।",
+    "case_type": "encroachment",
+    "location": "Bihar",
+    "language": "hindi",
+    "correct_route": "civil_court",
+    "reasoning": "खेत पर अतिक्रमण सिविल मामला है, कोर्ट से आदेश लेना आवश्यक है।",
+    "steps": [
+      "सिविल कोर्ट में वाद दायर करें",
+      "राजस्व रिकॉर्ड और नक्शा प्रस्तुत करें",
+      "पुलिस में शिकायत भी दर्ज करें"
+    ]
+  },
+  {
+    "case_id": "LD_038",
+    "case_summary": "Seller sold the same agricultural land to me and another buyer simultaneously.",
+    "case_type": "sale_dispute",
+    "location": "Tamil Nadu",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Double sale of property is a fraud requiring civil court for title declaration.",
+    "steps": [
+      "File civil suit for declaration of title",
+      "Submit registered sale deed",
+      "Apply for interim injunction against other buyer"
+    ]
+  },
+  {
+    "case_id": "LD_039",
+    "case_summary": "Builder took full payment for a plot but refused to register it in my name.",
+    "case_type": "sale_dispute",
+    "location": "Gujarat",
+    "language": "english",
+    "correct_route": "consumer_court",
+    "reasoning": "Builder's failure to deliver registered property after payment is consumer dispute.",
+    "steps": [
+      "File complaint in Consumer Court",
+      "Submit payment receipts and agreement",
+      "Seek registration or full refund with interest"
+    ]
+  },
+  {
+    "case_id": "LD_040",
+    "case_summary": "Seller did not disclose that the land had a court dispute before selling it to me.",
+    "case_type": "sale_dispute",
+    "location": "Maharashtra",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Non-disclosure of encumbrance by seller is fraud; civil court can annul sale.",
+    "steps": [
+      "File suit for rescission of sale agreement",
+      "Produce encumbrance certificate showing dispute",
+      "Claim refund and damages"
+    ]
+  },
+  {
+    "case_id": "LD_041",
+    "case_summary": "A power of attorney holder sold my land without my consent or knowledge.",
+    "case_type": "sale_dispute",
+    "location": "Karnataka",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Unauthorized sale by power of attorney holder is fraudulent and voidable in civil court.",
+    "steps": [
+      "File suit to cancel the sale deed",
+      "Submit original power of attorney",
+      "File police complaint for fraud"
+    ]
+  },
+  {
+    "case_id": "LD_042",
+    "case_summary": "Registration of land I purchased is being blocked by sub-registrar without valid reason.",
+    "case_type": "sale_dispute",
+    "location": "Andhra Pradesh",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Wrongful refusal of registration can be challenged in civil court by mandamus.",
+    "steps": [
+      "File writ petition in High Court",
+      "Submit all completed sale documents",
+      "Seek direction to register property"
+    ]
+  },
+  {
+    "case_id": "LD_043",
+    "case_summary": "I paid advance for a plot in a layout but the developer has disappeared.",
+    "case_type": "sale_dispute",
+    "location": "Telangana",
+    "language": "english",
+    "correct_route": "consumer_court",
+    "reasoning": "Developer fraud in real estate is a consumer dispute for refund with interest.",
+    "steps": [
+      "File consumer complaint",
+      "Submit payment proof and agreement",
+      "File police FIR for cheating"
+    ]
+  },
+  {
+    "case_id": "LD_044",
+    "case_summary": "Land sold to me has encroachment by a third party not disclosed by seller.",
+    "case_type": "sale_dispute",
+    "location": "Punjab",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Seller's liability for undisclosed encumbrance can be pursued in civil court.",
+    "steps": [
+      "File suit against seller for indemnity",
+      "Submit sale deed and encumbrance certificate",
+      "Separately file suit against encroacher"
+    ]
+  },
+  {
+    "case_id": "LD_045",
+    "case_summary": "जमीन बेचने के बाद विक्रेता वापस कब्जा मांग रहा है।",
+    "case_type": "sale_dispute",
+    "location": "Madhya Pradesh",
+    "language": "hindi",
+    "correct_route": "civil_court",
+    "reasoning": "पंजीकृत बिक्री के बाद विक्रेता का दावा कानूनन अमान्य है, सिविल कोर्ट से राहत मिलेगी।",
+    "steps": [
+      "सिविल कोर्ट में स्वामित्व घोषणा का वाद दायर करें",
+      "पंजीकृत बिक्री विलेख प्रस्तुत करें",
+      "निषेधाज्ञा का आवेदन करें"
+    ]
+  },
+  {
+    "case_id": "LD_046",
+    "case_summary": "Bank seized and auctioned my land for a loan I had already repaid.",
+    "case_type": "loan_dispute",
+    "location": "Maharashtra",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Wrongful auction by bank after loan repayment is challengeable in civil court.",
+    "steps": [
+      "File civil suit against bank",
+      "Submit loan repayment receipts",
+      "Request stay on auction proceedings"
+    ]
+  },
+  {
+    "case_id": "LD_047",
+    "case_summary": "Bank is charging higher interest rate than agreed in the original loan document.",
+    "case_type": "loan_dispute",
+    "location": "Telangana",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Unauthorized interest rate change by bank requires civil court for rectification.",
+    "steps": [
+      "File complaint in Banking Ombudsman",
+      "Submit original loan agreement",
+      "If unresolved, proceed to civil court"
+    ]
+  },
+  {
+    "case_id": "LD_048",
+    "case_summary": "Bank sent recovery agents who threatened my family and damaged property.",
+    "case_type": "loan_dispute",
+    "location": "Andhra Pradesh",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Illegal recovery tactics by bank are actionable in civil court and with RBI.",
+    "steps": [
+      "File police FIR against recovery agents",
+      "Complain to Banking Ombudsman",
+      "File civil suit for damages"
+    ]
+  },
+  {
+    "case_id": "LD_049",
+    "case_summary": "My land mortgage was transferred to another bank without my knowledge.",
+    "case_type": "loan_dispute",
+    "location": "Karnataka",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Unauthorized transfer of mortgage requires civil court challenge.",
+    "steps": [
+      "File civil suit challenging transfer",
+      "Submit original mortgage deed",
+      "Complain to RBI Banking Ombudsman"
+    ]
+  },
+  {
+    "case_id": "LD_050",
+    "case_summary": "Moneylender forcibly took my land documents claiming I defaulted on informal loan.",
+    "case_type": "loan_dispute",
+    "location": "Rajasthan",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Illegal seizure of documents by moneylender requires civil court and police action.",
+    "steps": [
+      "File police complaint for document theft",
+      "File civil suit for return of documents",
+      "Report to District Collector"
+    ]
+  },
+  {
+    "case_id": "LD_051",
+    "case_summary": "Cooperative bank attached my land for a loan taken by someone else using my documents.",
+    "case_type": "loan_dispute",
+    "location": "Gujarat",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Fraudulent use of documents for loan is a criminal and civil matter.",
+    "steps": [
+      "File FIR for document fraud",
+      "File civil suit against bank and fraudster",
+      "Apply for stay on attachment"
+    ]
+  },
+  {
+    "case_id": "LD_052",
+    "case_summary": "Bank is refusing to release land documents after full loan repayment.",
+    "case_type": "loan_dispute",
+    "location": "Tamil Nadu",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Bank's failure to return documents after repayment is actionable in civil court.",
+    "steps": [
+      "Send legal notice to bank",
+      "File complaint with Banking Ombudsman",
+      "File civil suit for return of documents"
+    ]
+  },
+  {
+    "case_id": "LD_053",
+    "case_summary": "बैंक ने बिना नोटिस दिए मेरी जमीन की नीलामी कर दी।",
+    "case_type": "loan_dispute",
+    "location": "Uttar Pradesh",
+    "language": "hindi",
+    "correct_route": "civil_court",
+    "reasoning": "बिना उचित नोटिस के नीलामी गैरकानूनी है, सिविल कोर्ट से राहत मिलेगी।",
+    "steps": [
+      "सिविल कोर्ट में नीलामी रद्द करने का वाद दायर करें",
+      "SARFAESI अधिनियम के तहत DRT में अपील करें",
+      "नीलामी पर स्थगन आदेश के लिए आवेदन करें"
+    ]
+  },
+  {
+    "case_id": "LD_054",
+    "case_summary": "साहूकार ने ब्याज के नाम पर मेरी सारी जमीन हड़प ली है।",
+    "case_type": "loan_dispute",
+    "location": "Bihar",
+    "language": "hindi",
+    "correct_route": "civil_court",
+    "reasoning": "साहूकार द्वारा अत्यधिक ब्याज वसूली और जमीन कब्जे पर सिविल और आपराधिक कार्रवाई होगी।",
+    "steps": [
+      "सिविल कोर्ट में जमीन वापसी का वाद दायर करें",
+      "पुलिस में शिकायत करें",
+      "जिला कलेक्टर को सूचित करें"
+    ]
+  },
+  {
+    "case_id": "LD_055",
+    "case_summary": "Neighbor built a compound wall 1.5 feet inside my land plot in city.",
+    "case_type": "boundary_dispute",
+    "location": "Kerala",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Encroachment by boundary wall requires civil suit for mandatory removal.",
+    "steps": [
+      "File civil suit for removal of wall",
+      "Submit survey sketch showing encroachment",
+      "Apply for interim injunction"
+    ]
+  },
+  {
+    "case_id": "LD_056",
+    "case_summary": "Revenue survey shows my land reduced by 1 acre compared to original patta.",
+    "case_type": "boundary_dispute",
+    "location": "Tamil Nadu",
+    "language": "english",
+    "correct_route": "revenue_department",
+    "reasoning": "Discrepancy in revenue survey and patta needs correction by revenue department.",
+    "steps": [
+      "Apply for resurvey to Tahsildar",
+      "Submit original patta and FMB sketch",
+      "Attend revenue officer inspection"
+    ]
+  },
+  {
+    "case_id": "LD_057",
+    "case_summary": "Son excluded from father's property despite being legitimate legal heir.",
+    "case_type": "inheritance_dispute",
+    "location": "Punjab",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Legal heir's right to inheritance can be enforced through civil court.",
+    "steps": [
+      "File civil suit for declaration as legal heir",
+      "Submit birth certificate and family documents",
+      "Request court partition of property"
+    ]
+  },
+  {
+    "case_id": "LD_058",
+    "case_summary": "Grandmother's property not transferred to grandchildren after both parents died.",
+    "case_type": "inheritance_dispute",
+    "location": "Maharashtra",
+    "language": "english",
+    "correct_route": "revenue_department",
+    "reasoning": "Transfer of inherited property to grandchildren requires mutation via revenue department.",
+    "steps": [
+      "Apply for mutation at revenue office",
+      "Submit death certificates and succession documents",
+      "Request mutation order"
+    ]
+  },
+  {
+    "case_id": "LD_059",
+    "case_summary": "Tenant not vacating commercial shop despite lease period ending 6 months ago.",
+    "case_type": "tenancy_issue",
+    "location": "Delhi",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Eviction from commercial premises after lease expiry is pursued in civil court.",
+    "steps": [
+      "Send legal notice for eviction",
+      "File civil suit for eviction and arrears",
+      "Submit registered lease agreement"
+    ]
+  },
+  {
+    "case_id": "LD_060",
+    "case_summary": "Tenant is demanding ownership of rented property citing long occupation.",
+    "case_type": "tenancy_issue",
+    "location": "Gujarat",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Adverse possession claim by tenant requires civil court to protect owner's rights.",
+    "steps": [
+      "File preventive civil suit",
+      "Establish continuous ownership records",
+      "Submit rent receipts proving tenancy"
+    ]
+  },
+  {
+    "case_id": "LD_061",
+    "case_summary": "Person from another state claiming ownership of my ancestral land using old documents.",
+    "case_type": "sale_dispute",
+    "location": "Telangana",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Fraudulent ownership claim requires civil court for title declaration.",
+    "steps": [
+      "File suit for declaration of title",
+      "Submit ancestral ownership records",
+      "Challenge authenticity of old documents"
+    ]
+  },
+  {
+    "case_id": "LD_062",
+    "case_summary": "Plot purchased in layout not developed; developer not providing amenities promised.",
+    "case_type": "sale_dispute",
+    "location": "Andhra Pradesh",
+    "language": "english",
+    "correct_route": "consumer_court",
+    "reasoning": "Failure to provide promised amenities in layout is deficiency in service under Consumer Act.",
+    "steps": [
+      "File consumer complaint",
+      "Submit brochure and sale agreement",
+      "Seek completion of amenities or refund"
+    ]
+  },
+  {
+    "case_id": "LD_063",
+    "case_summary": "Bank deducted EMIs twice in one month reducing my account to zero.",
+    "case_type": "loan_dispute",
+    "location": "Karnataka",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Bank's erroneous double deduction is actionable via Banking Ombudsman or civil court.",
+    "steps": [
+      "Complain to Bank Branch Manager",
+      "File complaint with Banking Ombudsman",
+      "If unresolved, file civil suit"
+    ]
+  },
+  {
+    "case_id": "LD_064",
+    "case_summary": "NBFC seized my tractor (purchased on loan) without valid default notice.",
+    "case_type": "loan_dispute",
+    "location": "Rajasthan",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Wrongful seizure of vehicle without proper notice is actionable in civil court.",
+    "steps": [
+      "File civil suit for return of tractor",
+      "Submit loan agreement and payment records",
+      "File complaint with RBI"
+    ]
+  },
+  {
+    "case_id": "LD_065",
+    "case_summary": "Neighbor extended his house construction 2 feet onto my residential plot.",
+    "case_type": "encroachment",
+    "location": "Kerala",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Construction encroachment on residential plot requires mandatory injunction from civil court.",
+    "steps": [
+      "File civil suit for mandatory injunction",
+      "Submit approved building plan and plot documents",
+      "Request court to order demolition of encroachment"
+    ]
+  },
+  {
+    "case_id": "LD_066",
+    "case_summary": "Factory illegally dumping waste on my adjacent farmland causing crop loss.",
+    "case_type": "encroachment",
+    "location": "Gujarat",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Industrial encroachment causing damage requires civil suit and pollution board complaint.",
+    "steps": [
+      "File civil suit for damages and injunction",
+      "Complain to Pollution Control Board",
+      "Submit evidence of crop loss"
+    ]
+  },
+  {
+    "case_id": "LD_067",
+    "case_summary": "मेरी जमीन पर किसी ने रात में चाहरदीवारी बना दी है।",
+    "case_type": "encroachment",
+    "location": "Madhya Pradesh",
+    "language": "hindi",
+    "correct_route": "civil_court",
+    "reasoning": "अवैध चाहरदीवारी निर्माण पर सिविल कोर्ट से अनिवार्य निषेधाज्ञा मिलेगी।",
+    "steps": [
+      "सिविल कोर्ट में वाद दायर करें",
+      "भूमि के दस्तावेज और नक्शा प्रस्तुत करें",
+      "पुलिस में FIR दर्ज करें"
+    ]
+  },
+  {
+    "case_id": "LD_068",
+    "case_summary": "Seller's legal heir is claiming property sold by seller 10 years ago is still family property.",
+    "case_type": "sale_dispute",
+    "location": "Bihar",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Challenge to old registered sale deed requires civil court for title declaration.",
+    "steps": [
+      "File declaratory suit for title",
+      "Submit registered sale deed from 10 years ago",
+      "Prove continuous possession"
+    ]
+  },
+  {
+    "case_id": "LD_069",
+    "case_summary": "Property purchased without checking that it had existing mortgage on it.",
+    "case_type": "sale_dispute",
+    "location": "Maharashtra",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Undisclosed mortgage on sold property gives buyer right to rescind or claim damages.",
+    "steps": [
+      "File civil suit against seller",
+      "Submit encumbrance certificate",
+      "Claim rescission or indemnity"
+    ]
+  },
+  {
+    "case_id": "LD_070",
+    "case_summary": "Bank claiming I have outstanding loan but I never took any loan from them.",
+    "case_type": "loan_dispute",
+    "location": "Punjab",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "False loan claim by bank requires civil court for declaration and damages.",
+    "steps": [
+      "Send legal notice denying loan",
+      "File civil suit for declaration",
+      "Complain to Banking Ombudsman and RBI"
+    ]
+  },
+  {
+    "case_id": "LD_071",
+    "case_summary": "Boundary between my land and government forest reserve is disputed by forest department.",
+    "case_type": "boundary_dispute",
+    "location": "Himachal Pradesh",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Dispute with government over land boundary requires civil suit and forest tribunal.",
+    "steps": [
+      "File civil suit with forest tribunal",
+      "Submit patta and historical records",
+      "Engage forest rights committee if applicable"
+    ]
+  },
+  {
+    "case_id": "LD_072",
+    "case_summary": "Joint family land not partitioned properly; elder brothers took more share.",
+    "case_type": "inheritance_dispute",
+    "location": "Uttar Pradesh",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Improper partition of joint family property requires civil court for fresh partition.",
+    "steps": [
+      "File partition suit in civil court",
+      "Submit revenue records of joint property",
+      "Court will appoint advocate commissioner"
+    ]
+  },
+  {
+    "case_id": "LD_073",
+    "case_summary": "Tenant converted my residential house into a lodge for rent without permission.",
+    "case_type": "tenancy_issue",
+    "location": "Andhra Pradesh",
+    "language": "english",
+    "correct_route": "revenue_department",
+    "reasoning": "Commercial conversion of residential rental is eviction ground under rent control law.",
+    "steps": [
+      "File eviction petition before Rent Controller",
+      "Submit evidence of commercial use",
+      "Attach original rent agreement"
+    ]
+  },
+  {
+    "case_id": "LD_074",
+    "case_summary": "Builder promised site with HMDA approval but delivered unapproved plot.",
+    "case_type": "sale_dispute",
+    "location": "Telangana",
+    "language": "english",
+    "correct_route": "consumer_court",
+    "reasoning": "Misrepresentation about approved layout is consumer dispute for refund or rectification.",
+    "steps": [
+      "File consumer complaint",
+      "Submit sale brochure with approval claims",
+      "Seek refund with interest"
+    ]
+  },
+  {
+    "case_id": "LD_075",
+    "case_summary": "किराएदार ने मकान में पशु पालना शुरू कर दिया जिससे घर खराब हो रहा है।",
+    "case_type": "tenancy_issue",
+    "location": "Haryana",
+    "language": "hindi",
+    "correct_route": "revenue_department",
+    "reasoning": "किराये की संपत्ति के दुरुपयोग पर किराया नियंत्रक के समक्ष बेदखली याचिका दायर करें।",
+    "steps": [
+      "किराया नियंत्रक के समक्ष शिकायत दर्ज करें",
+      "संपत्ति क्षति का साक्ष्य प्रस्तुत करें",
+      "किराया समझौता संलग्न करें"
+    ]
+  },
+  {
+    "case_id": "LD_076",
+    "case_summary": "Person using forged sale deed is trying to sell my land to a third party.",
+    "case_type": "sale_dispute",
+    "location": "Karnataka",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Forged sale deed fraud requires immediate injunction from civil court and police FIR.",
+    "steps": [
+      "File for urgent injunction in civil court",
+      "File criminal complaint for forgery",
+      "Alert sub-registrar office to stop registration"
+    ]
+  },
+  {
+    "case_id": "LD_077",
+    "case_summary": "Agricultural loan EMI restructuring request rejected by bank without reason.",
+    "case_type": "loan_dispute",
+    "location": "Andhra Pradesh",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Arbitrary rejection of restructuring can be challenged via Banking Ombudsman and court.",
+    "steps": [
+      "File appeal with Banking Ombudsman",
+      "Submit loan account statement",
+      "Approach civil court if unresolved"
+    ]
+  },
+  {
+    "case_id": "LD_078",
+    "case_summary": "दो भाइयों में से एक ने दूसरे की जानकारी के बिना पूरी जमीन बेच दी।",
+    "case_type": "inheritance_dispute",
+    "location": "Rajasthan",
+    "language": "hindi",
+    "correct_route": "civil_court",
+    "reasoning": "सह-स्वामी की सहमति के बिना जमीन बेचना अमान्य है, सिविल कोर्ट बिक्री रद्द कर सकती है।",
+    "steps": [
+      "सिविल कोर्ट में बिक्री रद्द करने का वाद दायर करें",
+      "सह-स्वामित्व के दस्तावेज प्रस्तुत करें",
+      "बेचीं जमीन पर अंतरिम रोक के लिए आवेदन करें"
+    ]
+  },
+  {
+    "case_id": "LD_079",
+    "case_summary": "Village pond encroached and filled up by a local builder to construct houses.",
+    "case_type": "encroachment",
+    "location": "Uttar Pradesh",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Encroachment on public water body requires civil court writ and district collector complaint.",
+    "steps": [
+      "File PIL or civil writ in High Court",
+      "Complain to District Collector",
+      "Report to National Green Tribunal"
+    ]
+  },
+  {
+    "case_id": "LD_080",
+    "case_summary": "My land was attached by court in a case to which I am not even a party.",
+    "case_type": "encroachment",
+    "location": "Tamil Nadu",
+    "language": "english",
+    "correct_route": "civil_court",
+    "reasoning": "Wrongful court attachment of third-party land requires intervention application in civil court.",
+    "steps": [
+      "File application in same civil court to vacate attachment",
+      "Submit ownership documents",
+      "Appoint a lawyer urgently"
+    ]
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "category": "boundary_dispute",
+    "input": "My neighbor built a fence 2 feet inside my agricultural land boundary.",
+    "output": {
+      "case_type": "boundary_dispute",
+      "route": "civil_court",
+      "explanation": "This is a boundary dispute. Your neighbor has illegally encroached on your land by building a fence. A civil court can order the fence to be removed and restore your boundary through a court-appointed land surveyor.",
+      "steps": [
+        "File a civil suit under Order VII CPC for permanent injunction",
+        "Request court-appointed land surveyor to verify boundary",
+        "Submit original land records and sale deed as evidence",
+        "Apply for interim injunction to stop further construction"
+      ]
+    }
+  },
+  {
+    "category": "inheritance_dispute",
+    "input": "My uncle is claiming my father's inherited 5-acre agricultural land after his death.",
+    "output": {
+      "case_type": "inheritance_dispute",
+      "route": "civil_court",
+      "explanation": "This is an inheritance dispute. As the legal heir, you have rights to your father's property under the Hindu Succession Act. A civil court can establish your heirship and protect your inheritance.",
+      "steps": [
+        "File a civil suit to establish legal heirship under Succession Act",
+        "Submit death certificate, legal heir certificate, and property documents",
+        "Apply for interim injunction to prevent uncle from alienating the land",
+        "Get a genealogy certificate from the Tehsildar to prove family relationship"
+      ]
+    }
+  },
+  {
+    "category": "tenancy_issue",
+    "input": "Tenant has not paid rent for 8 months and refuses to vacate my house.",
+    "output": {
+      "case_type": "tenancy_issue",
+      "route": "revenue_department",
+      "explanation": "This is a tenancy dispute. Non-payment of rent is a valid ground for eviction under the Rent Control Act. You should file an eviction petition before the Rent Controller in your district.",
+      "steps": [
+        "Send a legal notice to the tenant demanding rent payment and vacation",
+        "File an eviction petition before the Rent Controller citing non-payment",
+        "Submit rent agreement and proof of non-payment (bank records)",
+        "Attend the hearing and present your case for eviction order"
+      ]
+    }
+  },
+  {
+    "category": "sale_dispute",
+    "input": "Builder took full payment for a plot but refused to register it in my name.",
+    "output": {
+      "case_type": "sale_dispute",
+      "route": "consumer_court",
+      "explanation": "This is a consumer dispute. A builder taking full payment and refusing registration is a deficiency in service under the Consumer Protection Act. The Consumer Court can order registration or full refund with interest.",
+      "steps": [
+        "File a consumer complaint before the District Consumer Disputes Redressal Forum",
+        "Submit payment receipts, agreement to sell, and all communication with builder",
+        "Seek registration of property or full refund with interest as compensation",
+        "File a police complaint for cheating under IPC Section 420 if builder has disappeared"
+      ]
+    }
+  },
+  {
+    "category": "loan_dispute",
+    "input": "Bank seized and auctioned my land for a loan I had already repaid.",
+    "output": {
+      "case_type": "loan_dispute",
+      "route": "civil_court",
+      "explanation": "This is a loan dispute. A bank wrongfully auctioning your land after full repayment is illegal. You can challenge this in civil court and the Debt Recovery Tribunal to get the auction cancelled and your land restored.",
+      "steps": [
+        "File a civil suit against the bank for wrongful auction",
+        "Submit all loan repayment receipts and bank statement as proof",
+        "Request an urgent stay on auction proceedings from the court",
+        "File complaint with the Banking Ombudsman for illegal recovery action"
+      ]
+    }
+  },
+  {
+    "category": "encroachment",
+    "input": "Someone illegally occupied my 2-acre agricultural land while I was abroad.",
+    "output": {
+      "case_type": "encroachment",
+      "route": "civil_court",
+      "explanation": "This is an encroachment case. Someone illegally occupying your land while you were away is trespassing. A civil court can order the encroacher to vacate and restore your possession.",
+      "steps": [
+        "File a civil suit for recovery of possession immediately",
+        "Submit land ownership documents (patta, sale deed, revenue records)",
+        "Apply for an interim injunction to prevent the encroacher from creating rights",
+        "File a police complaint under IPC Section 447 for criminal trespass"
+      ]
+    }
+  }
+]
