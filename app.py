@@ -84,8 +84,28 @@ footer, .built-with { display: none !important; }
     border-color: #E5E7EB !important;
 }
 
+/* ── Base Nuclear Override for Dark Mode Radio/Checkbox Buttons ── */
+label[data-testid="radio-label"],
+label.svelte-1vsvtb, label.svelte-vt1mxs,
+.gr-radio label, .gr-checkbox label,
+div[data-testid] > label {
+    background-color: #FFFFFF !important;
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    border: 1px solid #E5E7EB !important;
+    box-shadow: none !important;
+}
+label[data-testid="radio-label"].selected,
+label.svelte-1vsvtb.selected, label.svelte-vt1mxs.selected,
+.gr-radio label.selected, .gr-checkbox label.selected,
+div[data-testid] > label.selected {
+    background-color: #FAFAFA !important;
+    background: #FAFAFA !important;
+    border: 2px solid #000000 !important;
+}
+
 /* ── Typography Override ── */
-span, p, label, .gr-prose, .gr-text, .text-gray-500 {
+span, p, label, .gr-prose, .gr-text, .text-gray-500, label span, .svelte-1vsvtb span {
     color: #000000 !important;
 }
 
@@ -455,7 +475,13 @@ def build_accuracy_bars():
 
 # ── Build Gradio UI ───────────────────────────────────────────
 def build_ui():
-    with gr.Blocks(title="NyayaSetu — Legal Aid AI") as demo:
+    js_func = """
+    function() {
+        document.body.classList.remove('dark');
+        document.querySelector('.gradio-container').classList.remove('dark');
+    }
+    """
+    with gr.Blocks(title="NyayaSetu — Legal Aid AI", js=js_func) as demo:
 
         # ── Hero ──────────────────────────────────────────────
         gr.HTML(f"""
