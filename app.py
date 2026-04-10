@@ -57,7 +57,15 @@ CLEAN_CSS = """
     --body-text-color-subdued: #4B5563 !important;
     --block-border-color: #E5E7EB !important;
     --panel-background-fill: #FFFFFF !important;
+    
+    /* ── Radio / Checkbox specific variables ── */
     --checkbox-background-color: #FFFFFF !important;
+    --checkbox-background-color-selected: #000000 !important;
+    --checkbox-label-background-fill: #FFFFFF !important;
+    --checkbox-label-background-fill-hover: #F9FAFB !important;
+    --checkbox-label-background-fill-selected: #FFFFFF !important;
+    --checkbox-border-color: #E5E7EB !important;
+    --checkbox-border-color-selected: #000000 !important;
 }
 
 /* ── Force Light Mode & Base Theme ── */
