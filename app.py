@@ -725,18 +725,31 @@ Citizen Output
 
 
 # ── Launch ────────────────────────────────────────────────────
+from openenv.core.env_server.http_server import create_app
+from environment import NyayasetuEnvironment
+from models import LegalAidAction, LegalAidObservation
+import uvicorn
+
+# Build OpenEnv API App
+env_app = create_app(
+    NyayasetuEnvironment,
+    LegalAidAction,
+    LegalAidObservation,
+    env_name="nyayasetu-legal-env",
+    max_concurrent_envs=10
+)
+
+# Build custom Gradio UI
+ui = build_ui()
+
+# Mount Gradio safely onto the API app
+app = gr.mount_gradio_app(env_app, ui, path="/")
+
 if __name__ == "__main__":
     print("=" * 55)
-    print("  NyayaSetu — Hugging Face Spaces")
+    print("  NyayaSetu — Hugging Face Spaces (Gradio + OpenEnv API)")
     print("=" * 55)
     print(f"  GROQ_API_KEY: {'SET ✅' if GROQ_KEY else 'NOT SET — Using Rule-Based'}")
     print(f"  Port: 7860 (HF default)")
     print("=" * 55)
-
-    ui = build_ui()
-    ui.launch(
-        server_name="0.0.0.0",
-        server_port=7860,
-        show_error=True,
-        css=CLEAN_CSS,
-    )
+    uvicorn.run(app, host="0.0.0.0", port=7860)
