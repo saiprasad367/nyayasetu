@@ -330,7 +330,10 @@ def build_accuracy_bars():
 
 
 def build_ui():
-    with gr.Blocks(title="NyayaSetu — Legal Aid AI", theme=gr.themes.Base()) as demo:
+    with gr.Blocks(title="NyayaSetu — Legal Aid AI") as demo:
+        # Theme can be set via state or launch, but in constructor it triggers warning in 6.0.
+        # Since this is a mounted app, we ensure theme is handled.
+        demo.theme = gr.themes.Base()
         # Nuclear CSS Injection
         gr.HTML(HEAD_HTML)
 
@@ -354,7 +357,7 @@ def build_ui():
             
             # ── DEMO ──────────────────────────────────────────
             with gr.TabItem("01 / LIVE ENGINE"):
-                with gr.Row(gap=0):
+                with gr.Row():
                     with gr.Column(scale=6):
                         case_input = gr.Textbox(
                             label="CASE SUMMARY / Input details here",
@@ -406,7 +409,7 @@ def build_ui():
                   <p style="opacity:0.8;margin:5px 0 0">Comparison between Rule-Based vs LLM Agent Logic</p>
                 </div>
                 """)
-                with gr.Row(gap=0):
+                with gr.Row():
                     with gr.Column():
                         gr.HTML(f"""
                         <div style="padding:40px;border-right:2px solid #000">
