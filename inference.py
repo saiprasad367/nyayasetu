@@ -1,77 +1,104 @@
 import os
+import sys
 import json
-import logging
 from openai import OpenAI
 
 # ------------------------------------------------------------------
 # MANDATORY OPENENV HACKATHON CONFIGURATION VARIABLES
-# These must perfectly match the pre-submission checklist requirements.
+# Strictly following the pre-submission checklist requirements.
 # ------------------------------------------------------------------
 API_BASE_URL = os.getenv("API_BASE_URL", "https://api.groq.com/openai/v1")
 MODEL_NAME = os.getenv("MODEL_NAME", "llama-3.1-8b-instant")
-HF_TOKEN = os.getenv("HF_TOKEN")
+HF_TOKEN = os.getenv("HF_TOKEN")  # No default — must be set as a Space secret
 
-# Optional - for docker based environments
+# Optional — only used if from_docker_image() is called
 LOCAL_IMAGE_NAME = os.getenv("LOCAL_IMAGE_NAME")
 
-# Instantiating the OpenAI client using the strictly passed variables
+# Instantiate the OpenAI-compatible client using the strictly defined variables
 client = OpenAI(
     base_url=API_BASE_URL,
-    # Fallback to GROQ_API_KEY only for local testing if HF_TOKEN is missing
-    api_key=HF_TOKEN if HF_TOKEN else os.getenv("GROQ_API_KEY", "dummy_key")
+    api_key=HF_TOKEN,
 )
 
 def run_inference():
     """
-    OpenEnv Hackathon inference sequence with strict START/STEP/END logging
-    and invocation of reset() and step().
+    OpenEnv Hackathon compliant inference sequence.
+    Logs follow the mandatory START / STEP / END structured format.
+    Calls environment reset() and step() as required by the validator.
     """
     print("START")
-    
+
     try:
+        # ── Import environment & models (flat HF Space layout) ──────────────
+        here = os.path.dirname(os.path.abspath(__file__))
+        if here not in sys.path:
+            sys.path.insert(0, here)
+
         from environment import NyayasetuEnvironment
+        from models import LegalAidAction
+
         env = NyayasetuEnvironment()
-        
-        # 1. Test Environment Reset
-        obs, info = env.reset()
-        print(f"STEP: Environment initialized. Observation: {str(obs)[:100]}...")
-        
-        # 2. OpenEnv LLM call using the OpenAI client
+
+        # ── 1. Reset the environment ─────────────────────────────────────
+        obs = env.reset()
+        print(f"STEP: Environment reset complete. Case type: {obs.case_type}. Location: {obs.location}.")
+
+        # ── 2. LLM inference call via OpenAI-compatible client ───────────
         response = client.chat.completions.create(
             model=MODEL_NAME,
             messages=[
-                {"role": "system", "content": "You are NyayaSetu, an AI Legal Aid Router. Output JSON containing 'route', 'explanation', and 'steps'."},
-                {"role": "user", "content": f"Case summary: {obs.get('case_summary', '')}"}
+                {
+                    "role": "system",
+                    "content": (
+                        "You are NyayaSetu, an AI Legal Aid Router for rural India. "
+                        "Given a land dispute case summary, produce a JSON object with exactly "
+                        "three keys: 'route' (one of: civil_court, revenue_department, "
+                        "arbitration, consumer_court, criminal_court), 'explanation' (a clear "
+                        "explanation for the citizen), and 'steps' (a list of 3-5 action steps)."
+                    ),
+                },
+                {
+                    "role": "user",
+                    "content": f"Case summary: {obs.case_summary}",
+                },
             ],
             response_format={"type": "json_object"},
-            temperature=0.1
+            temperature=0.1,
+            max_tokens=500,
         )
-        
-        # 3. Parse LLM inference output
+
         agent_output = response.choices[0].message.content
-        print(f"STEP: Inference Complete. Routing decision made.")
-        
-        # 4. Fallback execution to parse action correctly for step()
+        print("STEP: LLM inference complete. Parsing routing decision.")
+
+        # ── 3. Parse LLM output and build a typed action ─────────────────
         try:
             action_data = json.loads(agent_output)
-        except:
-            action_data = {"route": "civil_court", "explanation": "Fallback used.", "steps": []}
-            
-        action = {
-            "route": action_data.get("route", "civil_court"),
-            "explanation": action_data.get("explanation", "Proceed to civil court."),
-            "steps": action_data.get("steps", ["Consult a local lawyer immediately."])
-        }
-        
-        # 5. Test Environment Step
-        next_obs, reward, done, truncated, info = env.step(action)
-        print(f"STEP: Environment solved. Reward received: {reward}")
+        except (json.JSONDecodeError, TypeError):
+            action_data = {}
 
-    except Exception as e:
-        print(f"STEP: Critical Error encountered - {str(e)}")
-        
-    # Mandatory concluding output structure
+        action = LegalAidAction(
+            route=action_data.get("route", "civil_court"),
+            explanation=action_data.get(
+                "explanation", "Please consult a local legal aid centre."
+            ),
+            steps=action_data.get(
+                "steps", ["Visit the nearest District Legal Services Authority (DLSA)."]
+            ),
+        )
+
+        # ── 4. Step the environment with the parsed action ────────────────
+        result_obs = env.step(action)
+        print(
+            f"STEP: Environment step complete. "
+            f"Reward: {result_obs.reward:.4f}. "
+            f"Routed to: {action.route}."
+        )
+
+    except Exception as exc:  # noqa: BLE001
+        print(f"STEP: Error during inference — {exc}")
+
     print("END")
+
 
 if __name__ == "__main__":
     run_inference()
