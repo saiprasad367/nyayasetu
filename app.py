@@ -178,11 +178,11 @@ textarea:focus, input:focus {
 }
 
 .btn-submit {
-    background: #000000 !important;
-    color: #FFFFFF !important;
+    background: #FFFFFF !important;
+    color: #000000 !important;
     font-weight: 900 !important;
     font-size: 1.5rem !important;
-    border: none !important;
+    border: 3px solid #000000 !important;
     border-radius: 0px !important;
     padding: 30px !important;
     text-transform: uppercase;
@@ -191,24 +191,38 @@ textarea:focus, input:focus {
     width: 100% !important;
 }
 .btn-submit:hover {
-    background: #FFFFFF !important;
-    color: #000000 !important;
+    background: #000000 !important;
+    color: #FFFFFF !important;
     box-shadow: 10px 10px 0px #000000 !important;
     transform: translate(-4px, -4px);
-    border: 2px solid #000000 !important;
+    border: 3px solid #000000 !important;
 }
 
 .output-card {
-    background: #000000 !important;
-    color: #FFFFFF !important;
+    background: #FFFFFF !important;
+    color: #000000 !important;
     padding: 40px;
+    border: 2px solid #000000 !important;
 }
-.output-card * { color: #FFFFFF !important; }
+.output-card * { color: #000000 !important; }
 .output-card textarea { 
-    background: #000000 !important; 
-    border: 1px solid #FFFFFF !important;
+    background: #FFFFFF !important; 
+    border: 2px solid #000000 !important;
     margin-top: 10px;
+    color: #000000 !important;
 }
+
+/* ── Checkbox / Radio fixes for strict black on white ── */
+.gr-radio label, .gr-checkbox label, div[data-testid] > label {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+}
+.selected {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+}
+.selected span { color: #FFFFFF !important; }
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {
