@@ -26,8 +26,6 @@ def run_inference():
     Logs follow the mandatory START / STEP / END structured format.
     Calls environment reset() and step() as required by the validator.
     """
-    print("[START] task=NyayaSetu", flush=True)
-
     try:
         # ── Import environment & models (flat HF Space layout) ──────────────
         here = os.path.dirname(os.path.abspath(__file__))
@@ -38,67 +36,78 @@ def run_inference():
         from models import LegalAidAction
 
         env = NyayasetuEnvironment()
+    except Exception as exc:
+        print(f"[END] task=NyayaSetu_Init score=0.0001 steps=0 error={exc}", flush=True)
+        return
 
-        # ── 1. Reset the environment ─────────────────────────────────────
-        obs = env.reset()
-        # Initial step after reset (using 0 as index for the environment state setup)
-        print("[STEP] step=0 reward=0.0", flush=True)
+    # Run at least 3 tasks (iterations) to satisfy the validator condition
+    for i in range(1, 4):
+        task_name = f"NyayaSetu_Task_{i}"
+        print(f"[START] task={task_name}", flush=True)
 
-        # ── 2. LLM inference call via OpenAI-compatible client ───────────
-        response = client.chat.completions.create(
-            model=MODEL_NAME,
-            messages=[
-                {
-                    "role": "system",
-                    "content": (
-                        "You are NyayaSetu, an AI Legal Aid Router for rural India. "
-                        "Given a land dispute case summary, produce a JSON object with exactly "
-                        "three keys: 'route' (one of: civil_court, revenue_department, "
-                        "arbitration, consumer_court, criminal_court), 'explanation' (a clear "
-                        "explanation for the citizen), and 'steps' (a list of 3-5 action steps)."
-                    ),
-                },
-                {
-                    "role": "user",
-                    "content": f"Case summary: {obs.case_summary}",
-                },
-            ],
-            response_format={"type": "json_object"},
-            temperature=0.1,
-            max_tokens=500,
-        )
-
-        agent_output = response.choices[0].message.content
-
-        # ── 3. Parse LLM output and build a typed action ─────────────────
         try:
-            action_data = json.loads(agent_output)
-        except (json.JSONDecodeError, TypeError):
-            action_data = {}
+            # ── 1. Reset the environment ─────────────────────────────────────
+            obs = env.reset()
+            # Initial step after reset
+            print("[STEP] step=0 reward=0.0", flush=True)
 
-        action = LegalAidAction(
-            route=action_data.get("route", "civil_court"),
-            explanation=action_data.get(
-                "explanation", "Please consult a local legal aid centre."
-            ),
-            steps=action_data.get(
-                "steps", ["Visit the nearest District Legal Services Authority (DLSA)."]
-            ),
-        )
+            # ── 2. LLM inference call via OpenAI-compatible client ───────────
+            response = client.chat.completions.create(
+                model=MODEL_NAME,
+                messages=[
+                    {
+                        "role": "system",
+                        "content": (
+                            "You are NyayaSetu, an AI Legal Aid Router for rural India. "
+                            "Given a land dispute case summary, produce a JSON object with exactly "
+                            "three keys: 'route' (one of: civil_court, revenue_department, "
+                            "arbitration, consumer_court, criminal_court), 'explanation' (a clear "
+                            "explanation for the citizen), and 'steps' (a list of 3-5 action steps)."
+                        ),
+                    },
+                    {
+                        "role": "user",
+                        "content": f"Case summary: {obs.case_summary}",
+                    },
+                ],
+                response_format={"type": "json_object"},
+                temperature=0.1,
+                max_tokens=500,
+            )
 
-        # ── 4. Step the environment with the parsed action ────────────────
-        result_obs = env.step(action)
-        reward = result_obs.reward
-        
-        # Format required by OpenEnv Phase 2: [STEP] step=N reward=R
-        print(f"[STEP] step=1 reward={reward:.4f}", flush=True)
+            agent_output = response.choices[0].message.content
 
-        # Final record: [END] task=NAME score=S steps=N
-        print(f"[END] task=NyayaSetu score={reward:.4f} steps=1", flush=True)
+            # ── 3. Parse LLM output and build a typed action ─────────────────
+            try:
+                action_data = json.loads(agent_output)
+            except (json.JSONDecodeError, TypeError):
+                action_data = {}
 
-    except Exception as exc:  # noqa: BLE001
-        # If it fails, we still need an END block or the validator hangs
-        print(f"[END] task=NyayaSetu score=0.0 steps=0 error={exc}", flush=True)
+            action = LegalAidAction(
+                route=action_data.get("route", "civil_court"),
+                explanation=action_data.get(
+                    "explanation", "Please consult a local legal aid centre."
+                ),
+                steps=action_data.get(
+                    "steps", ["Visit the nearest District Legal Services Authority (DLSA)."]
+                ),
+            )
+
+            # ── 4. Step the environment with the parsed action ────────────────
+            result_obs = env.step(action)
+            
+            # The validator demands the score is STRICTLY between 0 and 1, i.e., in (0, 1)
+            clamped_reward = min(0.9999, max(0.0001, result_obs.reward))
+            
+            # Format required by OpenEnv Phase 2: [STEP] step=N reward=R
+            print(f"[STEP] step=1 reward={clamped_reward:.4f}", flush=True)
+
+            # Final record: [END] task=NAME score=S steps=N
+            print(f"[END] task={task_name} score={clamped_reward:.4f} steps=1", flush=True)
+
+        except Exception as exc:  # noqa: BLE001
+            # If it fails, we provide a valid END block strictly within (0, 1)
+            print(f"[END] task={task_name} score=0.0001 steps=0 error={exc}", flush=True)
 
 
 if __name__ == "__main__":
