@@ -95,8 +95,20 @@ html, body, .gradio-container, .dark {
     color: #111827 !important;
 }
 
-/* Force light mode text globally */
-* { color: #111827 !important; }
+/* ── Examples Table Fix ── */
+.gr-samples-table, .gr-samples-table table {
+    background-color: #FFFFFF !important;
+    color: #111827 !important;
+    border-collapse: collapse !important;
+}
+.gr-samples-table tr, .gr-samples-table td, .gr-samples-table th {
+    background-color: #FFFFFF !important;
+    color: #111827 !important;
+    border: 1px solid #E5E7EB !important;
+}
+.gr-samples-table tr:hover {
+    background-color: #F9FAFB !important;
+}
 
 footer, .built-with { display: none !important; }
 
