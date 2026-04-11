@@ -317,8 +317,8 @@ def build_accuracy_bars():
             <span style="font-size:0.8rem;font-weight:700">{label}</span>
             <span style="font-size:0.8rem;font-weight:900">{w}%</span>
           </div>
-          <div style="background:#eee;height:6px;border:1px solid #000">
-            <div style="background:#000;height:100%;width:{w}%"></div>
+          <div style="background:#F3F4F6;height:6px;border-radius:10px;overflow:hidden">
+            <div style="background:#111827;height:100%;width:{w}%"></div>
           </div>
         </div>"""
     return html
@@ -399,9 +399,9 @@ def build_ui():
             # ── EVALUATION ────────────────────────────────────
             with gr.TabItem("02 / PERFORMANCE"):
                 gr.HTML(f"""
-                <div style="padding:40px;border-bottom:2px solid #000;background:#000;color:#fff">
-                  <h2 style="color:#fff !important;margin:0">BENCHMARK RESULTS</h2>
-                  <p style="opacity:0.8;margin:5px 0 0">Comparison between Rule-Based vs LLM Agent Logic</p>
+                <div style="padding:40px;border-bottom:1px solid #E5E7EB;background:#FFFFFF;color:#111827">
+                  <h2 style="color:#111827 !important;margin:0">BENCHMARK RESULTS</h2>
+                  <p style="opacity:0.6;margin:5px 0 0">Comparison between Rule-Based vs LLM Agent Logic</p>
                 </div>
                 """)
                 with gr.Row():
@@ -485,8 +485,9 @@ ui = build_ui()
 app = gr.mount_gradio_app(env_app, ui, path="/ui")
 
 @app.get("/")
-def redirect_to_ui():
-    return RedirectResponse(url="/ui")
+def redirect_to_ui(request: gr.Request):
+    # Relative redirect to avoid Mixed Content (HTTP vs HTTPS) issues on proxy
+    return RedirectResponse(url="./ui")
 
 if __name__ == "__main__":
     print("=" * 55)
