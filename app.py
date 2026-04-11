@@ -30,10 +30,8 @@ from agent import RuleBasedAgent, LegalAidAgent
 GROQ_KEY = os.getenv("GROQ_API_KEY", "")
 DATA_DIR  = os.path.join(_ROOT, "data")
 
-# ── Load dataset info ─────────────────────────────────────────
-def _load_test_metrics():
-    metrics_path = os.path.join(_ROOT, "results", "evaluation_metrics.json")
-    if os.path.eCLEAN_CSS = """
+# ── Pure White & Black Premium CSS (Gradio 6.x Compatible) ────────────────
+CLEAN_CSS = """
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
 
 * { box-sizing: border-box; }
@@ -50,13 +48,11 @@ def _load_test_metrics():
     --body-text-color-subdued: #000000 !important;
     --block-border-color: #000000 !important;
     --panel-background-fill: #FFFFFF !important;
-    --container-padding: 20px !important;
     --block-label-text-color: #000000 !important;
     --button-primary-background-fill: #000000 !important;
     --button-primary-text-color: #FFFFFF !important;
 }
 
-/* ── Global Reset to Pure White/Black ── */
 body, .gradio-container, .dark {
     background: #FFFFFF !important;
     background-color: #FFFFFF !important;
@@ -66,26 +62,22 @@ body, .gradio-container, .dark {
 
 footer, .built-with { display: none !important; }
 
-/* ── Typography Nuclear Override ── */
-span, p, label, .gr-prose, .gr-text, .text-gray-500, h1, h2, h3, .svelte-1vsvtb, .svelte-vt1mxs {
+/* ── Nuclear Overrides for Gradio 6.x ── */
+span, p, label, .gr-prose, .gr-text, h1, h2, h3, div[class*="svelte-"], .gradio-container-6-11-0 {
     color: #000000 !important;
 }
 
-/* ── Container Logic ── */
 .gradio-container {
     max-width: 1200px !important;
     margin: 0 auto !important;
     padding: 20px !important;
 }
 
-/* ── Hero Section ── */
 .ns-hero {
     background: #FFFFFF !important;
     border: 2px solid #000000 !important;
-    border-radius: 0px !important;
     padding: 60px 40px !important;
     margin-bottom: 40px !important;
-    text-align: left;
 }
 
 .ns-eyebrow {
@@ -107,7 +99,6 @@ span, p, label, .gr-prose, .gr-text, .text-gray-500, h1, h2, h3, .svelte-1vsvtb,
     color: #000000 !important;
     line-height: 1.0;
     margin-bottom: 20px;
-    text-transform: uppercase;
 }
 
 .ns-desc {
@@ -125,10 +116,8 @@ span, p, label, .gr-prose, .gr-text, .text-gray-500, h1, h2, h3, .svelte-1vsvtb,
     font-size: 0.7rem;
     padding: 6px 15px;
     font-weight: 700;
-    text-transform: uppercase;
 }
 
-/* ── Stats Nuclear Black/White ── */
 .stats-bar {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -151,19 +140,14 @@ span, p, label, .gr-prose, .gr-text, .text-gray-500, h1, h2, h3, .svelte-1vsvtb,
     font-size: 0.7rem; 
     color: #000000 !important; 
     font-weight: 700;
-    text-transform: uppercase;
-    margin-top: 5px;
 }
 
-/* ── Layout Blocks ── */
 .gr-box, .gr-block, .gr-form, .gr-panel, div[class*="svelte-"], fieldset {
     background-color: #FFFFFF !important;
     border: 1px solid #000000 !important;
     border-radius: 0px !important;
-    box-shadow: none !important;
 }
 
-/* ── Inputs ── */
 textarea, input, select {
     background: #FFFFFF !important;
     border: 2px solid #000000 !important;
@@ -172,24 +156,16 @@ textarea, input, select {
     font-size: 1rem !important;
     padding: 15px !important;
 }
-textarea:focus, input:focus {
-    outline: 3px solid #000000 !important;
-    outline-offset: -3px !important;
-}
 
-/* ── Buttons ── */
 .btn-submit {
     background: #000000 !important;
     color: #FFFFFF !important;
     font-weight: 800 !important;
     font-size: 1.1rem !important;
     border: none !important;
-    border-radius: 0px !important;
     padding: 20px !important;
     text-transform: uppercase;
-    letter-spacing: 2px;
     cursor: pointer;
-    transition: all 0.1s ease;
 }
 .btn-submit:hover {
     background: #FFFFFF !important;
@@ -197,12 +173,11 @@ textarea:focus, input:focus {
     border: 4px solid #000000 !important;
 }
 
-/* ── Gradio Radio Elements (Extreme Fix) ── */
-.gr-radio label, .gr-checkbox label, div[data-testid] > label {
+/* ── Gradio 6.x Svelte Overrides ── */
+.gr-radio label, .gr-checkbox label, div[data-testid] > label, .svelte-1vsvtb {
     background-color: #FFFFFF !important;
     color: #000000 !important;
     border: 1px solid #000000 !important;
-    border-radius: 0px !important;
 }
 .selected {
     background-color: #000000 !important;
@@ -221,17 +196,8 @@ textarea:focus, input:focus {
 .output-card textarea { 
     background: #000000 !important; 
     color: #FFFFFF !important; 
-    border: 1px solid #FFFFFF !important;
 }
 
-/* ── Example Table ── */
-.gr-examples { border: 2px solid #000000 !important; border-radius: 0px !important; }
-.gr-examples table td, .gr-examples table th {
-    border: 1px solid #000000 !important;
-    color: #000000 !important;
-}
-
-/* ── Responsive Queries ── */
 @media (max-width: 900px) {
     .ns-hero { padding: 40px 20px !important; }
     .ns-title { font-size: 3rem !important; }
@@ -239,13 +205,12 @@ textarea:focus, input:focus {
 }
 
 @media (max-width: 600px) {
-    .ns-hero { padding: 30px 15px !important; }
-    .ns-title { font-size: 2.2rem !important; }
     .stats-bar { grid-template-columns: 1fr; }
     .ns-tags { flex-direction: column; }
-    .gradio-container { padding: 10px !important; }
 }
 """
+
+HEAD_HTML = f"<style>{CLEAN_CSS}</style>"
 0 0 10px rgba(0,0,0,0); }
     100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); }
 }
@@ -370,7 +335,7 @@ def build_ui():
         document.querySelector('.gradio-container').classList.remove('dark');
     }
     """
-    with gr.Blocks(title="NyayaSetu — Legal Aid AI", js=js_func, css=CLEAN_CSS) as demo:
+    with gr.Blocks(title="NyayaSetu — Legal Aid AI", head=HEAD_HTML) as demo:
 
         # ── Hero ──────────────────────────────────────────────
         gr.HTML(f"""
