@@ -481,7 +481,7 @@ def build_ui():
         document.querySelector('.gradio-container').classList.remove('dark');
     }
     """
-    with gr.Blocks(title="NyayaSetu — Legal Aid AI", js=js_func) as demo:
+    with gr.Blocks(title="NyayaSetu — Legal Aid AI", js=js_func, css=CLEAN_CSS) as demo:
 
         # ── Hero ──────────────────────────────────────────────
         gr.HTML(f"""
