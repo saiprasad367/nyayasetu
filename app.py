@@ -505,7 +505,7 @@ ui = build_ui()
 app = gr.mount_gradio_app(env_app, ui, path="/")
 
 # Use ProxyHeaders to fix HTTPS Mixed Content issues on Hugging Face
-from fastapi.middleware.proxy_headers import ProxyHeadersMiddleware
+from uvicorn.middleware.proxy_headers import ProxyHeadersMiddleware
 app.add_middleware(ProxyHeadersMiddleware, trusted_hosts="*")
 
 if __name__ == "__main__":
