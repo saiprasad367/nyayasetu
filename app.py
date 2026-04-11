@@ -71,6 +71,23 @@ CLEAN_CSS = """
     color-scheme: light !important;
 }
 
+/* Force light mode text and selection logic */
+* { 
+    color: #111827 !important; 
+    border-color: #E5E7EB !important;
+}
+input::placeholder, textarea::placeholder { color: #9CA3AF !important; }
+
+/* Radio & Checkbox Native Style */
+.gr-radio label, .gr-checkbox label {
+    color: #111827 !important;
+    background: #FFFFFF !important;
+    border: 1px solid #D1D5DB !important;
+}
+.selected {
+    background-color: #E5E7EB !important;
+}
+
 html, body, .gradio-container, .dark {
     background: #FFFFFF !important;
     background-color: #FFFFFF !important;
@@ -388,12 +405,15 @@ def build_ui():
 
                 gr.Examples(
                     examples=[
-                        ["Neighbor built a fence 2 feet inside my agricultural land boundary.", "English", False],
-                        ["Builder took full payment but refused to register the plot in my name.", "English", False],
-                        ["मेरे पड़ोसी ने मेरी जमीन की सीमा पर अवैध निर्माण कर दिया है।", "Hindi", False],
+                        ["Boundary Dispute: Neighbor moved the demarcating stones of my 5-acre field.", "English", True],
+                        ["Inheritance: My brother is denying my share in our father's ancestral property.", "English", True],
+                        ["Tenancy: Tenant has not paid rent for 6 months and refuses to vacate.", "English", True],
+                        ["Encroachment: Someone built a temporary structure on my roadside plot.", "Hindi", True],
+                        ["Sale Dispute: Paid advance for a plot but the seller is refusing registration.", "English", True],
+                        ["Mortgage: Bank is taking possession of agricultural land despite loan repayment.", "Hindi", True],
                     ],
                     inputs=[case_input, lang_radio, llm_check],
-                    label="PRESETS / Training Scenarios",
+                    label="PRESETS / Training Scenarios (Based on 8-Hour Blitz Strategy)",
                 )
 
             # ── EVALUATION ────────────────────────────────────
@@ -484,8 +504,10 @@ ui = build_ui()
 # Mount Gradio softly on /ui to avoid capturing the /reset API root
 app = gr.mount_gradio_app(env_app, ui, path="/ui")
 
+from fastapi import Request
+
 @app.get("/")
-def redirect_to_ui(request: gr.Request):
+def redirect_to_ui(request: Request):
     # Relative redirect to avoid Mixed Content (HTTP vs HTTPS) issues on proxy
     return RedirectResponse(url="./ui")
 
