@@ -33,331 +33,220 @@ DATA_DIR  = os.path.join(_ROOT, "data")
 # ── Load dataset info ─────────────────────────────────────────
 def _load_test_metrics():
     metrics_path = os.path.join(_ROOT, "results", "evaluation_metrics.json")
-    if os.path.exists(metrics_path):
-        with open(metrics_path, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return {}
-
-# ── White / Black Premium CSS ─────────────────────────────────
-CLEAN_CSS = """
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+    if os.path.eCLEAN_CSS = """
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
 
 * { box-sizing: border-box; }
 
-/* ── Force Variables (Kills Gradio Dark Mode dynamically) ── */
-:root, .dark, body, .gradio-container, .gradio-container-6-11-0 {
+:root, .dark, body, .gradio-container {
     --body-background-fill: #FFFFFF !important;
     --background-fill-primary: #FFFFFF !important;
-    --background-fill-secondary: #FAF9F6 !important;
-    --border-color-primary: #E5E7EB !important;
+    --background-fill-secondary: #FFFFFF !important;
+    --border-color-primary: #000000 !important;
     --block-background-fill: #FFFFFF !important;
     --input-background-fill: #FFFFFF !important;
     --input-background-fill-focus: #FFFFFF !important;
     --body-text-color: #000000 !important;
-    --body-text-color-subdued: #4B5563 !important;
-    --block-border-color: #E5E7EB !important;
+    --body-text-color-subdued: #000000 !important;
+    --block-border-color: #000000 !important;
     --panel-background-fill: #FFFFFF !important;
-    
-    /* ── Radio / Checkbox specific variables ── */
-    --checkbox-background-color: #FFFFFF !important;
-    --checkbox-background-color-selected: #000000 !important;
-    --checkbox-label-background-fill: #FFFFFF !important;
-    --checkbox-label-background-fill-hover: #F9FAFB !important;
-    --checkbox-label-background-fill-selected: #FFFFFF !important;
-    --checkbox-border-color: #E5E7EB !important;
-    --checkbox-border-color-selected: #000000 !important;
+    --container-padding: 20px !important;
+    --block-label-text-color: #000000 !important;
+    --button-primary-background-fill: #000000 !important;
+    --button-primary-text-color: #FFFFFF !important;
 }
 
-/* ── Force Light Mode & Base Theme ── */
-body, .gradio-container, .gradio-container-6-11-0, .dark {
-    background: var(--body-background-fill) !important;
-    background-color: var(--body-background-fill) !important;
-    font-family: 'Inter', sans-serif !important;
-    color: var(--body-text-color) !important;
+/* ── Global Reset to Pure White/Black ── */
+body, .gradio-container, .dark {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    font-family: 'Outfit', sans-serif !important;
+    color: #000000 !important;
 }
 
 footer, .built-with { display: none !important; }
 
-/* ── Force all Gradio blocks to be white ── */
-.gr-box, .gr-block, .gr-form, .gr-panel, div[class*="svelte-"], fieldset {
-    background-color: #FFFFFF !important;
-    border-color: #E5E7EB !important;
-}
-
-/* ── Base Nuclear Override for Dark Mode Radio/Checkbox Buttons ── */
-label[data-testid="radio-label"],
-label.svelte-1vsvtb, label.svelte-vt1mxs,
-.gr-radio label, .gr-checkbox label,
-div[data-testid] > label {
-    background-color: #FFFFFF !important;
-    background: #FFFFFF !important;
-    color: #000000 !important;
-    border: 1px solid #E5E7EB !important;
-    box-shadow: none !important;
-}
-label[data-testid="radio-label"].selected,
-label.svelte-1vsvtb.selected, label.svelte-vt1mxs.selected,
-.gr-radio label.selected, .gr-checkbox label.selected,
-div[data-testid] > label.selected {
-    background-color: #FAFAFA !important;
-    background: #FAFAFA !important;
-    border: 2px solid #000000 !important;
-}
-
-/* ── Typography Override ── */
-span, p, label, .gr-prose, .gr-text, .text-gray-500, label span, .svelte-1vsvtb span {
+/* ── Typography Nuclear Override ── */
+span, p, label, .gr-prose, .gr-text, .text-gray-500, h1, h2, h3, .svelte-1vsvtb, .svelte-vt1mxs {
     color: #000000 !important;
 }
 
-/* ── Hero ── */
+/* ── Container Logic ── */
+.gradio-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 20px !important;
+}
+
+/* ── Hero Section ── */
 .ns-hero {
     background: #FFFFFF !important;
-    border: 1px solid #E5E7EB !important;
-    border-radius: 20px !important;
-    padding: 48px 40px !important;
-    margin-bottom: 32px !important;
-    position: relative !important;
-    overflow: hidden !important;
-    box-shadow: 0 4px 30px rgba(0,0,0,0.03) !important;
-    animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    transition: transform 0.3s ease;
+    border: 2px solid #000000 !important;
+    border-radius: 0px !important;
+    padding: 60px 40px !important;
+    margin-bottom: 40px !important;
+    text-align: left;
 }
-.ns-hero:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(0,0,0,0.06) !important; }
 
 .ns-eyebrow {
-    display: inline-block;
-    border: 1px solid #E5E7EB;
-    color: #4B5563 !important;
-    font-size: 0.68rem;
-    letter-spacing: 2.5px;
+    color: #000000 !important;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    padding: 5px 14px;
-    border-radius: 20px;
-    margin-bottom: 16px;
-    font-weight: 600;
-    background: #F9FAFB !important;
+    font-weight: 700;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 4px;
+    margin-bottom: 20px;
+    display: inline-block;
 }
+
 .ns-title {
     font-family: 'Playfair Display', serif !important;
-    font-size: clamp(2rem, 5vw, 3.4rem) !important;
+    font-size: clamp(2.5rem, 8vw, 4.5rem) !important;
     font-weight: 700 !important;
     color: #000000 !important;
-    line-height: 1.15;
-    margin-bottom: 12px;
+    line-height: 1.0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
-.ns-title .accent { color: #000000 !important; text-decoration: underline; text-decoration-color: #E5E7EB; }
-.ns-desc {
-    color: #4B5563 !important;
-    font-size: 0.97rem;
-    max-width: 520px;
-    line-height: 1.7;
-    margin-bottom: 24px;
-}
-.ns-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-.ns-tag {
-    background: #FFFFFF !important;
-    border: 1px solid #E5E7EB !important;
-    color: #111827 !important;
-    font-size: 0.75rem;
-    padding: 5px 13px;
-    border-radius: 20px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-.ns-tag:hover { background: #F9FAFB !important; transform: translateY(-1px); }
-.ns-tag.hi { color: #000000 !important; border-color: #000000 !important; font-weight: 600 !important; }
 
-/* ── Stats Bar ── */
+.ns-desc {
+    color: #000000 !important;
+    font-size: 1.1rem;
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.ns-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+.ns-tag {
+    background: #000000 !important;
+    color: #FFFFFF !important;
+    font-size: 0.7rem;
+    padding: 6px 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* ── Stats Nuclear Black/White ── */
 .stats-bar {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 1px;
-    background: #E5E7EB !important;
-    border: 1px solid #E5E7EB !important;
-    border-radius: 16px;
-    overflow: hidden;
-    margin-bottom: 32px;
-    animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0;
+    border: 2px solid #000000 !important;
+    margin-bottom: 40px;
 }
 .stat-item {
     background: #FFFFFF !important;
-    padding: 20px 18px;
-    transition: background 0.3s ease, transform 0.3s ease;
-    cursor: default;
+    padding: 30px 20px;
+    border: 1px solid #000000 !important;
+    text-align: center;
 }
-.stat-item:hover { background: #F9FAFB !important; transform: scale(1.02); z-index: 2; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
 .stat-val {
-    font-size: 1.9rem;
-    font-weight: 700;
+    font-size: 2.2rem;
+    font-weight: 800;
     color: #000000 !important;
-    line-height: 1;
-    margin-bottom: 4px;
 }
-.stat-val.black { color: #000000 !important; }
-.stat-label { font-size: 0.75rem; color: #4B5563 !important; font-weight: 500; }
-
-/* ── Section Title ── */
-.sec-title {
-    font-size: 1.1rem;
+.stat-label { 
+    font-size: 0.7rem; 
+    color: #000000 !important; 
     font-weight: 700;
-    color: #000000 !important;
-    margin-bottom: 4px;
-}
-.sec-sub { font-size: 0.85rem; color: #4B5563 !important; margin-bottom: 16px; line-height: 1.5; }
-
-/* ── Input Card ── */
-.input-card {
-    background: #FFFFFF !important;
-    border: 1px solid #E5E7EB !important;
-    border-radius: 16px;
-    padding: 24px;
-    margin-bottom: 20px;
-    box-shadow: 0 1px 10px rgba(0,0,0,0.02) !important;
-    transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
-    animation: fadeLeft 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
-}
-.input-card:hover {
-    border-color: #D1D5DB !important;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.06) !important;
-    transform: translateY(-2px);
+    text-transform: uppercase;
+    margin-top: 5px;
 }
 
-/* ── Output Card ── */
-.output-card {
-    background: #FFFFFF !important;
-    border: 1px solid #E5E7EB !important;
-    border-radius: 16px;
-    padding: 24px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03) !important;
-    animation: fadeRight 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-.output-card:hover {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06) !important;
-    transform: translateY(-2px);
+/* ── Layout Blocks ── */
+.gr-box, .gr-block, .gr-form, .gr-panel, div[class*="svelte-"], fieldset {
+    background-color: #FFFFFF !important;
+    border: 1px solid #000000 !important;
+    border-radius: 0px !important;
+    box-shadow: none !important;
 }
 
 /* ── Inputs ── */
-textarea, .gr-textbox textarea, input, select {
+textarea, input, select {
     background: #FFFFFF !important;
-    background-color: #FFFFFF !important;
-    border: 1px solid #E5E7EB !important;
-    border-radius: 10px !important;
+    border: 2px solid #000000 !important;
+    border-radius: 0px !important;
     color: #000000 !important;
-    font-family: 'Inter', sans-serif !important;
-    font-size: 0.95rem !important;
-    padding: 14px 16px !important;
-    transition: all 0.3s ease !important;
-    resize: vertical !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.01) !important;
+    font-size: 1rem !important;
+    padding: 15px !important;
 }
-textarea:focus, input:focus, select:focus {
-    border-color: #000000 !important;
-    box-shadow: 0 0 0 1px #000000, 0 4px 12px rgba(0,0,0,0.04) !important;
-    outline: none !important;
+textarea:focus, input:focus {
+    outline: 3px solid #000000 !important;
+    outline-offset: -3px !important;
 }
-label span { color: #4B5563 !important; font-size: 0.85rem !important; font-weight: 600 !important; }
 
-/* ── Radio & Checks ── */
-.gr-radio, .gr-checkbox { background: #FFFFFF !important; border-color: #E5E7EB !important; }
-.gr-radio label, .gr-checkbox label { color: #000000 !important; }
-
-/* ── Submit Button ── */
+/* ── Buttons ── */
 .btn-submit {
-    background: #FFFFFF !important;
-    background-color: #FFFFFF !important;
-    color: #000000 !important;
-    font-weight: 700 !important;
-    font-size: 0.95rem !important;
-    border: 1.5px solid #000000 !important;
-    border-radius: 10px !important;
-    padding: 14px 28px !important;
-    width: 100% !important;
-    letter-spacing: 0.3px !important;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    cursor: pointer !important;
-    position: relative;
-    overflow: hidden;
-}
-.btn-submit::after {
-    content: '';
-    position: absolute;
-    top: 50%; left: 50%;
-    width: 150%; height: 150%;
-    background: rgba(0,0,0,0.05);
-    background-color: rgba(0,0,0,0.05);
-    transform: translate(-50%, -50%) scale(0);
-    border-radius: 50%;
-    transition: transform 0.4s ease;
+    background: #000000 !important;
+    color: #FFFFFF !important;
+    font-weight: 800 !important;
+    font-size: 1.1rem !important;
+    border: none !important;
+    border-radius: 0px !important;
+    padding: 20px !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.1s ease;
 }
 .btn-submit:hover {
-    background: #F9FAFB !important;
-    background-color: #F9FAFB !important;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08) !important;
-    transform: translateY(-2px) !important;
-}
-.btn-submit:active::after {
-    transform: translate(-50%, -50%) scale(1);
-    transition: 0s;
-}
-
-/* ── Outputs ── */
-.gr-textbox.output textarea {
-    background: #FAFAFA !important;
-    background-color: #FAFAFA !important;
-    border: 1px dashed #D1D5DB !important;
-    border-radius: 10px !important;
+    background: #FFFFFF !important;
     color: #000000 !important;
-    font-weight: 500 !important;
+    border: 4px solid #000000 !important;
 }
 
-/* ── Tabs ── */
-.tab-nav { border-bottom: 1px solid #E5E7EB !important; margin-bottom: 24px !important; }
-.tab-nav button {
-    color: #6B7280 !important;
-    font-size: 0.92rem !important;
-    font-weight: 500 !important;
-    padding: 12px 20px !important;
-    border-bottom: 2px solid transparent !important;
-    background: transparent !important;
-    transition: all 0.2s ease !important;
-}
-.tab-nav button:hover { color: #000000 !important; background: rgba(0,0,0,0.02) !important; }
-.tab-nav button.selected {
+/* ── Gradio Radio Elements (Extreme Fix) ── */
+.gr-radio label, .gr-checkbox label, div[data-testid] > label {
+    background-color: #FFFFFF !important;
     color: #000000 !important;
-    border-bottom-color: #000000 !important;
-    font-weight: 700 !important;
+    border: 1px solid #000000 !important;
+    border-radius: 0px !important;
+}
+.selected {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+}
+.selected span { color: #FFFFFF !important; }
+
+/* ── High-Contrast Output ── */
+.output-card {
+    background: #000000 !important;
+    color: #FFFFFF !important;
+    padding: 30px;
+    border: 2px solid #000000;
+}
+.output-card * { color: #FFFFFF !important; }
+.output-card textarea { 
+    background: #000000 !important; 
+    color: #FFFFFF !important; 
+    border: 1px solid #FFFFFF !important;
 }
 
-/* ── Bar chart ── */
-.bar-row { margin: 8px 0; animation: fadeRight 0.5s ease both; }
-.bar-bg { background: #E5E7EB !important; border-radius: 6px; height: 8px; margin-top: 4px; overflow: hidden; }
-.bar-fill { height: 100%; border-radius: 6px; background: #000000 !important; transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1); }
+/* ── Example Table ── */
+.gr-examples { border: 2px solid #000000 !important; border-radius: 0px !important; }
+.gr-examples table td, .gr-examples table th {
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+}
 
-/* ── Examples ── */
-.gr-examples { border: 1px solid #E5E7EB !important; border-radius: 12px !important; background: #FFFFFF !important; transition: all 0.3s ease; }
-.gr-examples:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.04) !important; }
-.gr-examples table { border-collapse: collapse !important; }
-.gr-examples table th { color: #4B5563 !important; font-size: 0.75rem !important; padding: 10px !important; border-bottom: 1px solid #E5E7EB !important; }
-.gr-examples table td { color: #000000 !important; font-size: 0.85rem !important; padding: 12px !important; border-bottom: 1px solid #F3F4F6 !important; transition: background 0.2s ease; }
-.gr-examples table tr:hover td { background: #F9FAFB !important; cursor: pointer; }
+/* ── Responsive Queries ── */
+@media (max-width: 900px) {
+    .ns-hero { padding: 40px 20px !important; }
+    .ns-title { font-size: 3rem !important; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+}
 
-/* ── Animations ── */
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
+@media (max-width: 600px) {
+    .ns-hero { padding: 30px 15px !important; }
+    .ns-title { font-size: 2.2rem !important; }
+    .stats-bar { grid-template-columns: 1fr; }
+    .ns-tags { flex-direction: column; }
+    .gradio-container { padding: 10px !important; }
 }
-@keyframes fadeLeft {
-    from { opacity: 0; transform: translateX(-15px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-@keyframes fadeRight {
-    from { opacity: 0; transform: translateX(15px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-@keyframes pulseGlow {
-    0% { box-shadow: 0 0 0 0 rgba(0,0,0,0.05); }
-    70% { box-shadow: 0 0 0 10px rgba(0,0,0,0); }
+"""
+0 0 10px rgba(0,0,0,0); }
     100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); }
 }
 .btn-submit:focus { animation: pulseGlow 1.5s infinite; }

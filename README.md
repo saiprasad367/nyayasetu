@@ -4,7 +4,7 @@ emoji: ⚖️
 colorFrom: indigo
 colorTo: yellow
 sdk: gradio
-sdk_version: 6.11.0
+sdk_version: 5.5.0
 app_file: app.py
 pinned: true
 license: mit
@@ -90,7 +90,7 @@ Citizen Output: Forum + Explanation + Steps
 - **Environment**: OpenEnv Core 0.2.3
 - **LLM**: Groq (Llama 3.1 8B Instant) — Free tier
 - **NLP**: Rule-based keyword routing (fallback)
-- **UI**: Gradio 6.x
+- **UI**: Gradio 5.5.0
 - **Data**: 100 real Indian land dispute cases (80 train / 20 test)
 - **Deployment**: Hugging Face Spaces (CPU Free)
 
