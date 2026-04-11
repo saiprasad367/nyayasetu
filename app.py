@@ -487,7 +487,6 @@ from openenv.core.env_server.http_server import create_app
 from environment import NyayasetuEnvironment
 from models import LegalAidAction, LegalAidObservation
 import uvicorn
-from fastapi.responses import RedirectResponse
 
 # Build OpenEnv API App (provides /reset, /step etc)
 env_app = create_app(
@@ -501,22 +500,20 @@ env_app = create_app(
 # Build custom Gradio UI
 ui = build_ui()
 
-# Mount Gradio softly on /ui to avoid capturing the /reset API root
-app = gr.mount_gradio_app(env_app, ui, path="/ui")
+# Mount Gradio at root. 
+# We use env_app as the base so /reset, /step etc. are preserved at the root.
+app = gr.mount_gradio_app(env_app, ui, path="/")
 
-from fastapi import Request
-
-@app.get("/")
-def redirect_to_ui(request: Request):
-    # Relative redirect to avoid Mixed Content (HTTP vs HTTPS) issues on proxy
-    return RedirectResponse(url="./ui")
+# Use ProxyHeaders to fix HTTPS Mixed Content issues on Hugging Face
+from fastapi.middleware.proxy_headers import ProxyHeadersMiddleware
+app.add_middleware(ProxyHeadersMiddleware, trusted_hosts="*")
 
 if __name__ == "__main__":
     print("=" * 55)
     print("  NyayaSetu — Hugging Face Spaces (Gradio + OpenEnv API)")
     print("=" * 55)
     print(f"  GROQ_API_KEY: {'SET ✅' if GROQ_KEY else 'NOT SET — Using Rule-Based'}")
-    print(f"  Port: 7860 (HF default) | OpenEnv at / | UI at /ui")
+    print(f"  Port: 7860 (HF default) | UI and API both at /")
     print("=" * 55)
     uvicorn.run(app, host="0.0.0.0", port=7860)
 
