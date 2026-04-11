@@ -26,7 +26,7 @@ def run_inference():
     Logs follow the mandatory START / STEP / END structured format.
     Calls environment reset() and step() as required by the validator.
     """
-    print("START")
+    print("[START] task=NyayaSetu", flush=True)
 
     try:
         # ── Import environment & models (flat HF Space layout) ──────────────
@@ -41,7 +41,8 @@ def run_inference():
 
         # ── 1. Reset the environment ─────────────────────────────────────
         obs = env.reset()
-        print(f"STEP: Environment reset complete. Case type: {obs.case_type}. Location: {obs.location}.")
+        # Initial step after reset (using 0 as index for the environment state setup)
+        print("[STEP] step=0 reward=0.0", flush=True)
 
         # ── 2. LLM inference call via OpenAI-compatible client ───────────
         response = client.chat.completions.create(
@@ -68,7 +69,6 @@ def run_inference():
         )
 
         agent_output = response.choices[0].message.content
-        print("STEP: LLM inference complete. Parsing routing decision.")
 
         # ── 3. Parse LLM output and build a typed action ─────────────────
         try:
@@ -88,16 +88,17 @@ def run_inference():
 
         # ── 4. Step the environment with the parsed action ────────────────
         result_obs = env.step(action)
-        print(
-            f"STEP: Environment step complete. "
-            f"Reward: {result_obs.reward:.4f}. "
-            f"Routed to: {action.route}."
-        )
+        reward = result_obs.reward
+        
+        # Format required by OpenEnv Phase 2: [STEP] step=N reward=R
+        print(f"[STEP] step=1 reward={reward:.4f}", flush=True)
+
+        # Final record: [END] task=NAME score=S steps=N
+        print(f"[END] task=NyayaSetu score={reward:.4f} steps=1", flush=True)
 
     except Exception as exc:  # noqa: BLE001
-        print(f"STEP: Error during inference — {exc}")
-
-    print("END")
+        # If it fails, we still need an END block or the validator hangs
+        print(f"[END] task=NyayaSetu score=0.0 steps=0 error={exc}", flush=True)
 
 
 if __name__ == "__main__":
