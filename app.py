@@ -42,202 +42,195 @@ def _load_test_metrics():
     return {}
 
 # ── Pure White & Black Premium CSS (Gradio 6.x Compatible) ────────────────
-# ── Pure White & Black Premium CSS (Brutalist Minimal) ────────────────────
+# ── Ultra-Premium Clean Light Theme (Meta/Google Style) ────────────────────
 CLEAN_CSS = """
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 * { box-sizing: border-box; }
 
-:root {
+:root, .dark, body, .gradio-container {
     --body-background-fill: #FFFFFF !important;
     --background-fill-primary: #FFFFFF !important;
     --background-fill-secondary: #FFFFFF !important;
-    --border-color-primary: #000000 !important;
+    --border-color-primary: #E5E7EB !important;
     --block-background-fill: #FFFFFF !important;
     --input-background-fill: #FFFFFF !important;
     --input-background-fill-focus: #FFFFFF !important;
-    --body-text-color: #000000 !important;
-    --body-text-color-subdued: #000000 !important;
-    --block-border-color: #000000 !important;
+    --body-text-color: #111827 !important;
+    --body-text-color-subdued: #4B5563 !important;
+    --block-border-color: #E5E7EB !important;
     --panel-background-fill: #FFFFFF !important;
-    --container-padding: 0 !important;
-    --block-label-text-color: #000000 !important;
-    --button-primary-background-fill: #000000 !important;
-    --button-primary-text-color: #FFFFFF !important;
-    --radius-lg: 0px !important;
-    --radius-md: 0px !important;
-    --radius-sm: 0px !important;
+    --block-label-text-color: #111827 !important;
+    --button-primary-background-fill: #FFFFFF !important;
+    --button-primary-text-color: #111827 !important;
+    --button-secondary-background-fill: #FFFFFF !important;
+    --button-secondary-text-color: #111827 !important;
+    --radius-lg: 16px !important;
+    --radius-md: 12px !important;
+    --radius-sm: 8px !important;
+    color-scheme: light !important;
 }
 
-body, .gradio-container, .dark {
+html, body, .gradio-container, .dark {
     background: #FFFFFF !important;
     background-color: #FFFFFF !important;
-    font-family: 'Outfit', sans-serif !important;
-    color: #000000 !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    color: #111827 !important;
 }
+
+/* Force light mode text globally */
+* { color: #111827 !important; }
 
 footer, .built-with { display: none !important; }
 
-/* ── Global Brutalist Typography ── */
-span, p, label, .gr-prose, .gr-text, h1, h2, h3, div[class*="svelte-"], .gradio-container {
-    color: #000000 !important;
-}
-
 /* ── Container Logic ── */
 .gradio-container {
-    max-width: 1400px !important;
+    max-width: 1200px !important;
     margin: 0 auto !important;
-    border-left: 2px solid #000000 !important;
-    border-right: 2px solid #000000 !important;
-    min-height: 100vh !important;
-    padding: 0px !important;
+    padding: 40px 20px !important;
 }
 
 /* ── Hero ── */
 .ns-hero {
-    border-bottom: 2px solid #000000 !important;
-    padding: 80px 60px !important;
-    background: #FFFFFF !important;
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    background: #FFFFFF;
 }
 
 .ns-eyebrow {
-    font-size: 0.8rem;
-    letter-spacing: 4px;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    font-weight: 800;
-    margin-bottom: 20px;
-    display: block;
+    font-weight: 700;
+    color: #6B7280 !important;
+    margin-bottom: 16px;
+    display: inline-block;
 }
 
 .ns-title {
-    font-family: 'Playfair Display', serif !important;
-    font-size: clamp(3rem, 12vw, 6rem) !important;
-    font-weight: 700 !important;
+    font-size: clamp(2.5rem, 6vw, 4rem) !important;
+    font-weight: 800 !important;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 24px;
     color: #000000 !important;
-    line-height: 0.85;
-    margin-bottom: 30px;
-    letter-spacing: -2px;
 }
 
 .ns-desc {
-    font-size: 1.2rem;
-    max-width: 600px;
-    line-height: 1.4;
-    border-left: 4px solid #000000;
-    padding-left: 20px;
-    margin-bottom: 40px;
+    font-size: 1.15rem;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #374151 !important;
 }
 
 /* ── Stats bar ── */
 .stats-bar {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    border-bottom: 2px solid #000000 !important;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
 }
 .stat-item {
-    padding: 40px;
-    border-right: 2px solid #000000;
     text-align: center;
 }
-.stat-item:last-child { border-right: none; }
 .stat-val {
-    font-size: 3rem;
-    font-weight: 900;
-    letter-spacing: -2px;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #111827 !important;
+    line-height: 1;
 }
 .stat-label { 
-    font-size: 0.75rem; 
+    font-size: 0.8rem; 
+    font-weight: 600;
+    color: #6B7280 !important;
     text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 2px;
-    margin-top: 10px;
+    letter-spacing: 1px;
+    margin-top: 8px;
 }
 
 /* ── Gradio Block Fixes ── */
-.gr-box, .gr-block, .gr-form, .gr-panel, div[class*="svelte-"], fieldset {
+.gr-box, .gr-block, .gr-form, .gr-panel, fieldset {
     background-color: #FFFFFF !important;
-    border: none !important;
-    border-radius: 0px !important;
-    box-shadow: none !important;
+    border: 1px solid #E5E7EB !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
 }
 
 /* ── Inputs & Output ── */
 textarea, input, select {
-    background: #FFFFFF !important;
-    border: 2px solid #000000 !important;
-    border-radius: 0px !important;
-    color: #000000 !important;
-    font-size: 1.1rem !important;
-    padding: 20px !important;
-    font-family: 'Outfit', sans-serif;
+    background: #FAFAFA !important;
+    border: 1px solid #D1D5DB !important;
+    border-radius: 12px !important;
+    font-size: 1.05rem !important;
+    padding: 16px !important;
+    font-family: 'Inter', sans-serif !important;
+    transition: all 0.2s ease;
 }
 textarea:focus, input:focus {
-    box-shadow: 10px 10px 0px #000000 !important;
+    background: #FFFFFF !important;
+    border-color: #9CA3AF !important;
+    box-shadow: 0 0 0 4px rgba(243, 244, 246, 1) !important;
     outline: none !important;
-    transform: translate(-4px, -4px);
 }
 
 .btn-submit {
     background: #FFFFFF !important;
-    color: #000000 !important;
-    font-weight: 900 !important;
-    font-size: 1.5rem !important;
-    border: 3px solid #000000 !important;
-    border-radius: 0px !important;
-    padding: 30px !important;
-    text-transform: uppercase;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    border: 1px solid #D1D5DB !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
     cursor: pointer;
-    transition: all 0.1s;
+    transition: all 0.2s ease;
     width: 100% !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
 }
 .btn-submit:hover {
-    background: #000000 !important;
-    color: #FFFFFF !important;
-    box-shadow: 10px 10px 0px #000000 !important;
-    transform: translate(-4px, -4px);
-    border: 3px solid #000000 !important;
+    background: #F9FAFB !important;
+    border-color: #9CA3AF !important;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05) !important;
+    transform: translateY(-1px);
 }
 
 .output-card {
     background: #FFFFFF !important;
-    color: #000000 !important;
-    padding: 40px;
-    border: 2px solid #000000 !important;
+    padding: 32px;
+    border-radius: 16px !important;
+    border: 1px solid #E5E7EB !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important;
 }
-.output-card * { color: #000000 !important; }
 .output-card textarea { 
-    background: #FFFFFF !important; 
-    border: 2px solid #000000 !important;
-    margin-top: 10px;
-    color: #000000 !important;
+    background: #F9FAFB !important; 
+    border: 1px solid #E5E7EB !important;
+    margin-top: 8px;
+    border-radius: 8px !important;
 }
 
-/* ── Checkbox / Radio fixes for strict black on white ── */
+/* Tabs */
+.tab-nav { border-bottom: 1px solid #E5E7EB !important; }
+.tab-nav button { border: none !important; font-weight: 600 !important; }
+.tab-nav button.selected { border-bottom: 2px solid #111827 !important; }
+
+/* ── Checkbox / Radio fixes ── */
 .gr-radio label, .gr-checkbox label, div[data-testid] > label {
     background-color: #FFFFFF !important;
-    color: #000000 !important;
-    border: 2px solid #000000 !important;
+    border: 1px solid #D1D5DB !important;
+    border-radius: 8px !important;
+    padding: 10px 16px !important;
 }
 .selected {
-    background-color: #000000 !important;
-    color: #FFFFFF !important;
+    background-color: #F3F4F6 !important;
+    border-color: #9CA3AF !important;
 }
-.selected span { color: #FFFFFF !important; }
 
 /* ── Responsive ── */
-@media (max-width: 1024px) {
-    .gradio-container { border-left: none; border-right: none; }
-    .stat-item { border-bottom: 2px solid #000000; border-right: none; }
-    .ns-hero { padding: 40px 30px !important; }
-    .ns-title { font-size: 4rem !important; }
+@media (max-width: 768px) {
+    .ns-title { font-size: 2.5rem !important; }
+    .gradio-container { padding: 20px 10px !important; }
 }
-
-    @keyframes pulseGlow {
-        0% { box-shadow: 0 0 0 0 rgba(0,0,0,0.05); }
-        70% { box-shadow: 0 0 0 10px rgba(0,0,0,0); }
-        100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); }
-    }
-    .btn-submit:focus { animation: pulseGlow 1.5s infinite; }
 """
 
 HEAD_HTML = f"<style>{CLEAN_CSS}</style>"
