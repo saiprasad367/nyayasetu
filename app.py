@@ -214,18 +214,6 @@ textarea:focus, input:focus {
 .tab-nav button { border: none !important; font-weight: 600 !important; }
 .tab-nav button.selected { border-bottom: 2px solid #111827 !important; }
 
-/* ── Checkbox / Radio fixes ── */
-.gr-radio label, .gr-checkbox label, div[data-testid] > label {
-    background-color: #FFFFFF !important;
-    border: 1px solid #D1D5DB !important;
-    border-radius: 8px !important;
-    padding: 10px 16px !important;
-}
-.selected {
-    background-color: #F3F4F6 !important;
-    border-color: #9CA3AF !important;
-}
-
 /* ── Responsive ── */
 @media (max-width: 768px) {
     .ns-title { font-size: 2.5rem !important; }
@@ -479,8 +467,9 @@ from openenv.core.env_server.http_server import create_app
 from environment import NyayasetuEnvironment
 from models import LegalAidAction, LegalAidObservation
 import uvicorn
+from fastapi.responses import RedirectResponse
 
-# Build OpenEnv API App
+# Build OpenEnv API App (provides /reset, /step etc)
 env_app = create_app(
     NyayasetuEnvironment,
     LegalAidAction,
@@ -492,15 +481,19 @@ env_app = create_app(
 # Build custom Gradio UI
 ui = build_ui()
 
-# Mount Gradio safely onto the API app
-app = gr.mount_gradio_app(env_app, ui, path="/")
+# Mount Gradio softly on /ui to avoid capturing the /reset API root
+app = gr.mount_gradio_app(env_app, ui, path="/ui")
+
+@app.get("/")
+def redirect_to_ui():
+    return RedirectResponse(url="/ui")
 
 if __name__ == "__main__":
     print("=" * 55)
     print("  NyayaSetu — Hugging Face Spaces (Gradio + OpenEnv API)")
     print("=" * 55)
     print(f"  GROQ_API_KEY: {'SET ✅' if GROQ_KEY else 'NOT SET — Using Rule-Based'}")
-    print(f"  Port: 7860 (HF default)")
+    print(f"  Port: 7860 (HF default) | OpenEnv at / | UI at /ui")
     print("=" * 55)
     uvicorn.run(app, host="0.0.0.0", port=7860)
 
