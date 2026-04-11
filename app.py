@@ -30,6 +30,17 @@ from agent import RuleBasedAgent, LegalAidAgent
 GROQ_KEY = os.getenv("GROQ_API_KEY", "")
 DATA_DIR  = os.path.join(_ROOT, "data")
 
+# ── Load dataset info ─────────────────────────────────────────
+def _load_test_metrics():
+    metrics_path = os.path.join(_ROOT, "results", "evaluation_metrics.json")
+    if os.path.exists(metrics_path):
+        try:
+            with open(metrics_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return {}
+    return {}
+
 # ── Pure White & Black Premium CSS (Gradio 6.x Compatible) ────────────────
 CLEAN_CSS = """
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
@@ -215,6 +226,8 @@ textarea, input, select {
     }
     .btn-submit:focus { animation: pulseGlow 1.5s infinite; }
 """
+# Note: For Gradio 6.0+ head parameter is moved to launch().
+# In mounted context, we inject it via a top-level gr.HTML or similar.
 
 HEAD_HTML = f"<style>{CLEAN_CSS}</style>"
 
@@ -326,7 +339,9 @@ def build_ui():
         document.querySelector('.gradio-container').classList.remove('dark');
     }
     """
-    with gr.Blocks(title="NyayaSetu — Legal Aid AI", head=HEAD_HTML) as demo:
+    with gr.Blocks(title="NyayaSetu — Legal Aid AI") as demo:
+        # Inject CSS via HTML for Gradio 6.0 compatibility in mounted apps
+        gr.HTML(f"<style>{CLEAN_CSS}</style>")
 
         # ── Hero ──────────────────────────────────────────────
         gr.HTML(f"""
