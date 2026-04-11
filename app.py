@@ -208,24 +208,15 @@ textarea, input, select {
     .stats-bar { grid-template-columns: 1fr; }
     .ns-tags { flex-direction: column; }
 }
+    @keyframes pulseGlow {
+        0% { box-shadow: 0 0 0 0 rgba(0,0,0,0.05); }
+        70% { box-shadow: 0 0 0 10px rgba(0,0,0,0); }
+        100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); }
+    }
+    .btn-submit:focus { animation: pulseGlow 1.5s infinite; }
 """
 
 HEAD_HTML = f"<style>{CLEAN_CSS}</style>"
-0 0 10px rgba(0,0,0,0); }
-    100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); }
-}
-.btn-submit:focus { animation: pulseGlow 1.5s infinite; }
-
-/* ── Responsive ── */
-@media (max-width: 768px) {
-    .ns-hero { padding: 32px 24px !important; }
-    .stats-bar { grid-template-columns: repeat(2, 1fr); }
-    .ns-tags { flex-direction: column; }
-}
-@media (max-width: 480px) {
-    .stats-bar { grid-template-columns: 1fr 1fr; }
-}
-"""
 
 # ── Prediction Logic ──────────────────────────────────────────
 def predict(case_summary: str, language: str, use_llm: bool):
