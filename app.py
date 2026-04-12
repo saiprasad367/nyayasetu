@@ -71,48 +71,94 @@ CLEAN_CSS = """
     color-scheme: light !important;
 }
 
-/* Force light mode text and selection logic */
-* { 
-    color: #111827 !important; 
-    border-color: #E5E7EB !important;
+/* ── Global: white bg + black text everywhere ── */
+html, body, .gradio-container, .dark,
+.gradio-container *, .dark * {
+    background-color: #FFFFFF !important;
+    color: #111827 !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
+
+/* Restore transparent bg for purely decorative/structural elements */
+svg, path, circle, rect, polygon { background-color: transparent !important; }
+
+/* Placeholder text */
 input::placeholder, textarea::placeholder { color: #9CA3AF !important; }
 
-/* Radio & Checkbox Native Style */
-.gr-radio label, .gr-checkbox label {
-    color: #111827 !important;
-    background: #FFFFFF !important;
-    border: 1px solid #D1D5DB !important;
-}
-.selected {
-    background-color: #E5E7EB !important;
-}
-
-html, body, .gradio-container, .dark {
+/* ── Radio Button — Clean Native Style (Visible Tick) ── */
+/* Remove ALL dark backgrounds from radio wrapper */
+.gr-radio, .gr-radio > div,
+div[data-testid="radio-group"], div[data-testid="radio-group"] > div {
     background: #FFFFFF !important;
     background-color: #FFFFFF !important;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
-    color: #111827 !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
-/* ── Examples Table Fix ── */
-.gr-samples-table, .gr-samples-table table {
+/* Each radio item row */
+.gr-radio label,
+div[data-testid="radio-group"] label,
+.gr-radio span,
+div[data-testid="radio-group"] span {
+    background: #FFFFFF !important;
     background-color: #FFFFFF !important;
     color: #111827 !important;
-    border-collapse: collapse !important;
+    border: none !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0 !important;
 }
-.gr-samples-table tr, .gr-samples-table td, .gr-samples-table th {
-    background-color: #FFFFFF !important;
-    color: #111827 !important;
-    border: 1px solid #E5E7EB !important;
+
+/* The actual <input type="radio"> element — let browser render the native tick */
+.gr-radio input[type="radio"],
+div[data-testid="radio-group"] input[type="radio"] {
+    -webkit-appearance: radio !important;
+    -moz-appearance: radio !important;
+    appearance: radio !important;
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    accent-color: #111827 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    flex-shrink: 0;
+    padding: 0 !important;
+    margin: 0 !important;
 }
-.gr-samples-table tr:hover {
-    background-color: #F9FAFB !important;
+
+/* Selected state highlight */
+.gr-radio label.selected,
+div[data-testid="radio-group"] label.selected {
+    background-color: #F3F4F6 !important;
+    border-radius: 6px !important;
+}
+
+/* ── Checkbox — same native approach ── */
+.gr-checkbox input[type="checkbox"],
+div[data-testid="checkbox"] input[type="checkbox"] {
+    -webkit-appearance: checkbox !important;
+    -moz-appearance: checkbox !important;
+    appearance: checkbox !important;
+    width: 18px !important;
+    height: 18px !important;
+    accent-color: #111827 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 footer, .built-with { display: none !important; }
 
-/* ── Container Logic ── */
+/* ── Container ── */
 .gradio-container {
     max-width: 1200px !important;
     margin: 0 auto !important;
@@ -124,9 +170,8 @@ footer, .built-with { display: none !important; }
     text-align: center;
     padding: 60px 20px;
     margin-bottom: 40px;
-    background: #FFFFFF;
+    background: #FFFFFF !important;
 }
-
 .ns-eyebrow {
     font-size: 0.85rem;
     letter-spacing: 2px;
@@ -136,7 +181,6 @@ footer, .built-with { display: none !important; }
     margin-bottom: 16px;
     display: inline-block;
 }
-
 .ns-title {
     font-size: clamp(2.5rem, 6vw, 4rem) !important;
     font-weight: 800 !important;
@@ -145,7 +189,6 @@ footer, .built-with { display: none !important; }
     margin-bottom: 24px;
     color: #000000 !important;
 }
-
 .ns-desc {
     font-size: 1.15rem;
     max-width: 650px;
@@ -162,9 +205,7 @@ footer, .built-with { display: none !important; }
     flex-wrap: wrap;
     margin-top: 40px;
 }
-.stat-item {
-    text-align: center;
-}
+.stat-item { text-align: center; }
 .stat-val {
     font-size: 2.5rem;
     font-weight: 800;
@@ -185,11 +226,11 @@ footer, .built-with { display: none !important; }
     background-color: #FFFFFF !important;
     border: 1px solid #E5E7EB !important;
     border-radius: 16px !important;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03) !important;
 }
 
-/* ── Inputs & Output ── */
-textarea, input, select {
+/* ── Inputs & Outputs ── */
+textarea, input[type="text"], input[type="email"], input[type="number"], select {
     background: #FAFAFA !important;
     border: 1px solid #D1D5DB !important;
     border-radius: 12px !important;
@@ -197,25 +238,65 @@ textarea, input, select {
     padding: 16px !important;
     font-family: 'Inter', sans-serif !important;
     transition: all 0.2s ease;
+    color: #111827 !important;
 }
-textarea:focus, input:focus {
+textarea:focus, input[type="text"]:focus {
     background: #FFFFFF !important;
     border-color: #9CA3AF !important;
     box-shadow: 0 0 0 4px rgba(243, 244, 246, 1) !important;
     outline: none !important;
 }
 
+/* ── Examples / Summary Table — white bg, always-visible black text ── */
+table,
+.gr-samples-table, .gr-samples-table table,
+table.svelte-p9djcn, .table-wrap table,
+div[data-testid="examples"] table {
+    background-color: #FFFFFF !important;
+    color: #111827 !important;
+    border-collapse: collapse !important;
+    width: 100% !important;
+}
+table tr, table td, table th,
+.gr-samples-table tr, .gr-samples-table td, .gr-samples-table th,
+div[data-testid="examples"] tr,
+div[data-testid="examples"] td,
+div[data-testid="examples"] th {
+    background-color: #FFFFFF !important;
+    color: #111827 !important;
+    border: 1px solid #E5E7EB !important;
+    padding: 10px 14px !important;
+    font-size: 0.9rem !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+table tr:hover td,
+.gr-samples-table tr:hover td,
+div[data-testid="examples"] tr:hover td {
+    background-color: #F9FAFB !important;
+    cursor: pointer;
+}
+/* Remove any hover-only text visibility rules */
+table td *, table th *,
+.gr-samples-table td *, .gr-samples-table th * {
+    color: #111827 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* ── Submit Button ── */
 .btn-submit {
     background: #FFFFFF !important;
     font-weight: 700 !important;
     font-size: 1.1rem !important;
-    border: 1px solid #D1D5DB !important;
+    border: 1.5px solid #D1D5DB !important;
     border-radius: 12px !important;
     padding: 20px !important;
     cursor: pointer;
     transition: all 0.2s ease;
     width: 100% !important;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+    color: #111827 !important;
 }
 .btn-submit:hover {
     background: #F9FAFB !important;
@@ -229,7 +310,7 @@ textarea:focus, input:focus {
     padding: 32px;
     border-radius: 16px !important;
     border: 1px solid #E5E7EB !important;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05) !important;
 }
 .output-card textarea { 
     background: #F9FAFB !important; 
@@ -238,15 +319,16 @@ textarea:focus, input:focus {
     border-radius: 8px !important;
 }
 
-/* Tabs */
+/* ── Tabs ── */
 .tab-nav { border-bottom: 1px solid #E5E7EB !important; }
-.tab-nav button { border: none !important; font-weight: 600 !important; }
+.tab-nav button { border: none !important; font-weight: 600 !important; background: #FFFFFF !important; color: #111827 !important; }
 .tab-nav button.selected { border-bottom: 2px solid #111827 !important; }
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
     .ns-title { font-size: 2.5rem !important; }
     .gradio-container { padding: 20px 10px !important; }
+    .stats-bar { gap: 20px; }
 }
 """
 
